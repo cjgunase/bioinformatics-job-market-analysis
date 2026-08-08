@@ -18,3 +18,7 @@
 10. Stop and record a blocker before changing study scope, eligibility rules,
     taxonomy meaning, publication status, legal assumptions, or mandatory
     quality thresholds.
+11. Every nightly run—including blocked runs—must append a dated entry to
+    `_projects/bioinformatics-job-market-analysis.md` in the portfolio repository.
+    Report the outcome, milestone, meaningful evidence or links, tests/checks,
+    blockers, and next milestone. Keep all entries on that single living page.

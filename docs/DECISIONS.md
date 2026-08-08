@@ -16,4 +16,7 @@ findings until the specification's named human-review gates are complete.
 
 The implementation lives in `cjgunase/bioinformatics-job-market-analysis`.
 Chathura's portfolio contains one living project entry linking to the repository
-and its progress log, avoiding a flood of low-value daily blog posts.
+and its progress log. Every nightly run appends a dated public report to that
+same project page, including outcome, validation, blockers, source links, and the
+next milestone. Progress stays consolidated as one project instead of creating
+separate posts.
