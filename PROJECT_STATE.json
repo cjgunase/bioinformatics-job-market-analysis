@@ -1,0 +1,13 @@
+{
+  "project": "bioinformatics-job-market-analysis",
+  "study_id": "BSE-JMA-001",
+  "spec_version": "1.1.1",
+  "timezone": "America/New_York",
+  "daily_milestone_limit": 1,
+  "current_milestone": "M01",
+  "last_completed_milestone": null,
+  "last_run_date": null,
+  "status": "scheduled",
+  "human_gate_required": true,
+  "canonical_publication_approved": false
+}
