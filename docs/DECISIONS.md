@@ -20,3 +20,11 @@ and its progress log. Every nightly run appends a dated public report to that
 same project page, including outcome, validation, blockers, source links, and the
 next milestone. Progress stays consolidated as one project instead of creating
 separate posts.
+
+## D004 — 2026-08-09 — Normative baseline provenance
+
+Specification `BSE-JMA-001` version `1.1.1` is preserved byte-for-byte at
+`docs/specification/BSE-JMA-001-v1.1.1.md` with SHA-256 digest
+`7721e84c22c3ef07dbcb9a926bef6074f74847f9c257f184fe8f87cda78a9ed0`.
+Normative changes require the specification's reviewed versioning process;
+the pinned file and checksum must not be silently rewritten.

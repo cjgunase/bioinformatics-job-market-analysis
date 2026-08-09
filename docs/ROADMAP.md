@@ -4,7 +4,7 @@ Each numbered milestone is one day's maximum scope. A milestone may take more
 than one day if blocked or failing tests, but two milestones must never be
 combined to catch up.
 
-- [ ] M01 — Import, checksum, and document specification 1.1.1.
+- [x] M01 — Import, checksum, and document specification 1.1.1.
 - [ ] M02 — Scaffold the Python package, pinned tooling, and baseline CI.
 - [ ] M03 — Define study configuration, controlled values, and run metadata.
 - [ ] M04 — Implement JSON Schemas and schema-validation tests.

@@ -17,11 +17,10 @@ gates—including human review—pass. Unreviewed outputs will be labeled drafts
 
 ## Source specification
 
-The approved baseline supplied by the project owner is stored locally at:
-
-`/home/chathura/projects/Bioinformatics_Engineer/bioinformatics_job_market_analysis_agent_specification.md`
-
-Importing and checksum-pinning that baseline is Milestone 01.
+The approved baseline is preserved as [BSE-JMA-001 version
+1.1.1](docs/specification/BSE-JMA-001-v1.1.1.md). Its provenance and pinned
+SHA-256 digest are documented in the [specification
+README](docs/specification/README.md).
 
 ## License
 
