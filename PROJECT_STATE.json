@@ -4,10 +4,12 @@
   "spec_version": "1.1.1",
   "timezone": "America/New_York",
   "daily_milestone_limit": 1,
-  "current_milestone": "M01",
-  "last_completed_milestone": null,
-  "last_run_date": null,
-  "status": "scheduled",
+  "current_milestone": "M02",
+  "last_completed_milestone": "M01",
+  "last_completed_milestone_date": "2026-08-09",
+  "last_run_date": "2026-08-09",
+  "last_run_outcome": "milestone_completed",
+  "status": "active",
   "human_gate_required": true,
   "canonical_publication_approved": false
 }
