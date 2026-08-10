@@ -28,3 +28,11 @@ Specification `BSE-JMA-001` version `1.1.1` is preserved byte-for-byte at
 `7721e84c22c3ef07dbcb9a926bef6074f74847f9c257f184fe8f87cda78a9ed0`.
 Normative changes require the specification's reviewed versioning process;
 the pinned file and checksum must not be silently rewritten.
+
+## D005 — 2026-08-10 — Baseline Python toolchain
+
+The package baseline uses Python 3.13.11 and uv 0.9.27. Direct development
+tools are exactly constrained in `pyproject.toml`, transitive dependencies are
+locked in `uv.lock`, and CI actions are pinned to immutable commit SHAs. The
+baseline CI gate runs linting, formatting, strict type checking, unit tests,
+and distribution builds without accessing job-source data.

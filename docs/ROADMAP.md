@@ -5,7 +5,7 @@ than one day if blocked or failing tests, but two milestones must never be
 combined to catch up.
 
 - [x] M01 — Import, checksum, and document specification 1.1.1.
-- [ ] M02 — Scaffold the Python package, pinned tooling, and baseline CI.
+- [x] M02 — Scaffold the Python package, pinned tooling, and baseline CI.
 - [ ] M03 — Define study configuration, controlled values, and run metadata.
 - [ ] M04 — Implement JSON Schemas and schema-validation tests.
 - [ ] M05 — Establish taxonomy 1.0.0 and its governance changelog.
