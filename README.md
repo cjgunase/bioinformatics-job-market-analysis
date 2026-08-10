@@ -22,6 +22,37 @@ The approved baseline is preserved as [BSE-JMA-001 version
 SHA-256 digest are documented in the [specification
 README](docs/specification/README.md).
 
+## Development setup
+
+The development environment is pinned to Python 3.13.11 and uv 0.9.27. Install
+[uv](https://docs.astral.sh/uv/), then create the locked environment:
+
+```bash
+uv python install "$(cat .python-version)"
+uv sync --locked --all-groups
+```
+
+Run the same baseline checks as CI:
+
+```bash
+uv run ruff check .
+uv run ruff format --check .
+uv run mypy
+uv run pytest
+uv build --no-build-isolation
+```
+
+The `uv.lock` file pins transitive dependencies. Update it only as a reviewed
+toolchain or dependency change.
+
+## Data handling
+
+Never commit secrets, cookies, applicant data, or restricted full job text.
+Raw and interim job-source material belongs under the gitignored `data/raw/`
+and `data/interim/` paths when lawful retention is permitted. Public artifacts
+must contain only permitted excerpts, provenance metadata, derived values, and
+aggregates.
+
 ## License
 
 Code is released under the MIT License. Job-posting evidence remains subject to

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling==1.31.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bioinformatics-job-market-analysis"
+version = "0.1.0"
+description = "Reproducible analysis of software-engineering demand in bioinformatics job postings"
+readme = "README.md"
+requires-python = "==3.13.*"
+license = "MIT"
+authors = [
+  { name = "Chathura Gunasekara" },
+]
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/market_analysis"]
+
+[dependency-groups]
+dev = [
+  "hatchling==1.31.0",
+  "mypy==2.3.0",
+  "pytest==9.1.1",
+  "ruff==0.16.2",
+]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers -ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["B", "E4", "E7", "E9", "F", "I", "RUF", "SIM", "UP"]
+
+[tool.uv]
+required-version = "==0.9.27"
