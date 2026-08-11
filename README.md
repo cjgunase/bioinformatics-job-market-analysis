@@ -22,6 +22,20 @@ The approved baseline is preserved as [BSE-JMA-001 version
 SHA-256 digest are documented in the [specification
 README](docs/specification/README.md).
 
+## Versioned configuration
+
+Normative study defaults live in [`config/study.yaml`](config/study.yaml), and
+exact controlled identifiers are documented in
+[`schemas/codebook.yaml`](schemas/codebook.yaml). The configuration is versioned
+independently from the approved specification so implementation-only changes can
+be reviewed without silently changing study scope or thresholds.
+
+[`config/run_metadata.example.json`](config/run_metadata.example.json) records
+the required run fields in an explicitly pre-collection state. Its null
+collection window, zero funnel counts, absent taxonomy version, and absent human
+reviewer are deliberate. Production runs must populate those values from actual
+events; they must never copy the example as evidence of collection or approval.
+
 ## Development setup
 
 The development environment is pinned to Python 3.13.11 and uv 0.9.27. Install

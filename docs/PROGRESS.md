@@ -38,3 +38,19 @@ Blockers: none. No collection was performed; funnel and human-review counts
 remain zero because M02 is infrastructure-only.
 
 Next: M03 — define study configuration, controlled values, and run metadata.
+
+## 2026-08-11 — M03 completed
+
+- Added versioned study configuration 1.0.0 with specification 1.1.1 scope,
+  sampling, review, analysis, quality, horizon-scan, and publication defaults.
+- Documented exact controlled values in codebook 1.0.0, while leaving the skill
+  taxonomy version unset for M05.
+- Added an explicitly pre-collection run-metadata example with null timestamps,
+  zero funnel counts, and no human-review claim.
+- Added typed YAML/JSON configuration loaders and tests for normative defaults,
+  controlled-value uniqueness, required metadata fields, and human-gate safety.
+
+Blockers: none. No collection was performed; candidate, included, reserve,
+evidence-validated, and human-reviewed counts remain zero.
+
+Next: M04 — implement JSON Schemas and schema-validation tests.

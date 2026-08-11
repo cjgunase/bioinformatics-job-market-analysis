@@ -36,3 +36,14 @@ tools are exactly constrained in `pyproject.toml`, transitive dependencies are
 locked in `uv.lock`, and CI actions are pinned to immutable commit SHAs. The
 baseline CI gate runs linting, formatting, strict type checking, unit tests,
 and distribution builds without accessing job-source data.
+
+## D006 — 2026-08-11 — Versioned configuration boundary
+
+Study defaults are represented in `config/study.yaml` at configuration version
+`1.0.0`, and exact non-taxonomy controlled identifiers are documented in
+`schemas/codebook.yaml` at codebook version `1.0.0`. The configuration preserves
+specification 1.1.1 thresholds and keeps the taxonomy version null until M05.
+Run metadata begins in an explicit pre-collection state with null timestamps,
+zero funnel counts, and no reviewer; those fields may change only from observed
+run events and human decisions. Semantic controlled-value changes require review
+and an appended decision rather than silent replacement.
