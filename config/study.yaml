@@ -1,0 +1,57 @@
+config_version: 1.0.0
+study_id: BSE-JMA-001
+spec_version: 1.1.1
+taxonomy_version: null # Established by M05 before production coding.
+pipeline_version: 0.1.0
+timezone: America/New_York
+
+scope:
+  geography: US
+  collection_window_days_max: 7
+
+sampling:
+  target_n: 150
+  minimum_candidate_pool: 220
+  minimum_reserve_pool: 20
+  company_cap: 5
+  template_cap: 3
+  minimum_first_party_fraction: 0.70
+  random_seed: 202608
+
+review:
+  human_audit_job_fraction: 0.20
+  low_confidence_threshold: 0.80
+  exclude_confidence_below: 0.60
+  human_approval_required: true
+
+deduplication:
+  near_duplicate_review_band: [0.82, 0.90]
+
+analysis:
+  main_skill_min_support: 5
+  cooccurrence_min_support: 5
+  subgroup_min_n: 15
+  trend_min_absolute_percentage_points: 3
+  trend_confirmation_updates: 2
+
+quality:
+  audit_precision_target: 0.95
+  audit_category_precision_target: 0.90
+  audit_recall_target: 0.90
+
+horizon_scan:
+  cadence: monthly
+  scenarios:
+    - incremental_assistance
+    - agentic_delegation
+    - supervised_autonomy
+    - reliability_governance_bottleneck
+  months: [12, 24, 36]
+  capability_evidence_strong_min: 11
+  capability_evidence_moderate_min: 7
+  forecast_backtest_cadence: quarterly
+  forecast_human_approval_required: true
+
+publication:
+  canonical_publication_approved: false
+  unreviewed_label: Not human verified—do not cite

@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-08_bioinfo_jobs_us_v01",
+  "spec_version": "1.1.1",
+  "taxonomy_version": null,
+  "pipeline_version": "0.1.0",
+  "config_version": "1.0.0",
+  "collection_started_at": null,
+  "collection_closed_at": null,
+  "publication_month": "2026-08",
+  "target_n": 150,
+  "included_n": 0,
+  "candidate_n": 0,
+  "reserve_n": 0,
+  "previous_run_id": null,
+  "git_commit": null,
+  "status": "initialized",
+  "human_reviewer": null,
+  "freeze_timestamp": null,
+  "notes": "Template only; no collection has started and no human approval is claimed."
+}

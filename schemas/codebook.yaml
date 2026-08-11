@@ -1,0 +1,131 @@
+codebook_version: 1.0.0
+spec_version: 1.1.1
+
+controlled_values:
+  run.status:
+    - initialized
+    - collecting
+    - screening
+    - frozen_draft
+    - analyzing
+    - awaiting_human_review
+    - draft_not_human_verified
+    - approved
+    - published
+    - blocked
+    - failed
+
+  job.role_family:
+    - bioinformatics_engineering
+    - computational_biology_science
+    - scientific_software_platform
+    - data_workflow_infrastructure
+    - ai_ml_for_biology
+    - technical_leadership_management
+
+  job.seniority:
+    - entry_associate
+    - mid_level
+    - senior_plus
+    - unspecified
+
+  job.sector:
+    - biopharma
+    - biotechnology_tools
+    - diagnostics_clinical_labs
+    - genomics_sequencing
+    - health_tech
+    - ai_enabled_drug_discovery
+    - contract_research_services
+    - scientific_software_platform
+    - other_life_science
+
+  job.employment_type:
+    - full_time
+    - part_time
+    - fixed_term
+    - contract
+
+  job.location_mode:
+    - onsite
+    - hybrid
+    - remote
+    - unspecified
+
+  job.source_type:
+    - employer_career_page
+    - employer_operated_ats
+    - employer_authenticated_platform
+    - reputable_job_board
+    - discovery_only
+
+  job.selection_status:
+    - candidate
+    - excluded
+    - eligible
+    - included
+    - reserve
+    - replaced
+
+  job.inclusion_decision:
+    - pending
+    - include
+    - exclude
+    - pending_human
+
+  job.decision_reason_code:
+    - include_meets_all
+    - exclude_academic
+    - exclude_internship
+    - exclude_wet_lab
+    - exclude_not_life_science
+    - exclude_not_engineering
+    - exclude_geography
+    - exclude_inactive
+    - exclude_incomplete_text
+    - exclude_duplicate
+    - exclude_company_cap
+    - exclude_template_cap
+    - exclude_source_unverifiable
+    - pending_human
+    - reserve_quota
+
+  job.human_review_status:
+    - not_reviewed
+    - pending
+    - approved
+    - rejected
+
+  requirement.requirement_status:
+    - required
+    - preferred
+    - responsibility
+    - benefit_context
+    - unclear
+
+  requirement.ai_relation:
+    - none
+    - ai_assisted_development
+    - ai_ml_engineering
+    - generative_ai_llm
+    - ai_agents_or_orchestration
+    - ai_evaluation_safety
+    - ai_scientific_application
+    - ambiguous_ai
+
+  evidence.terms_retention_mode:
+    - restricted_full_snapshot
+    - permitted_full_snapshot
+    - excerpt_hash_metadata_only
+
+null_policy:
+  format: null
+  description: Use YAML/JSON null for unavailable or not-yet-established values.
+  prohibitions:
+    - Do not use empty strings as missing values.
+    - Do not impute absent salary or evidence fields.
+
+governance:
+  - Controlled values are exact snake_case identifiers.
+  - Additions or semantic changes require a reviewed decision-log entry.
+  - Taxonomy skill and category identifiers are established separately in M05.
