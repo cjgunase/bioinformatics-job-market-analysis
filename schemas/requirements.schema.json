@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cjgunase.github.io/schemas/bioinformatics-job-market-analysis/requirements.schema.json",
+  "title": "Atomic job requirement",
+  "description": "One job-skill assertion for BSE-JMA-001 specification 1.1.1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "requirement_id",
+    "job_id",
+    "evidence_id",
+    "requirement_text_normalized",
+    "requirement_status",
+    "taxonomy_category_id",
+    "taxonomy_skill_id",
+    "tool_or_technology_raw",
+    "years_experience_min",
+    "years_experience_max",
+    "education_level",
+    "proficiency_term",
+    "ai_relation",
+    "extraction_method",
+    "extractor_model",
+    "prompt_version",
+    "confidence",
+    "human_verified",
+    "adjudication_note"
+  ],
+  "properties": {
+    "run_id": {
+      "$ref": "#/$defs/run_id"
+    },
+    "requirement_id": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "job_id": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "evidence_id": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "requirement_text_normalized": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "requirement_status": {
+      "type": "string",
+      "enum": [
+        "required",
+        "preferred",
+        "responsibility",
+        "benefit_context",
+        "unclear"
+      ]
+    },
+    "taxonomy_category_id": {
+      "$ref": "#/$defs/nullable_identifier"
+    },
+    "taxonomy_skill_id": {
+      "$ref": "#/$defs/nullable_identifier"
+    },
+    "tool_or_technology_raw": {
+      "$ref": "#/$defs/nullable_nonempty_string"
+    },
+    "years_experience_min": {
+      "$ref": "#/$defs/nullable_nonnegative_number"
+    },
+    "years_experience_max": {
+      "$ref": "#/$defs/nullable_nonnegative_number"
+    },
+    "education_level": {
+      "$ref": "#/$defs/nullable_nonempty_string"
+    },
+    "proficiency_term": {
+      "$ref": "#/$defs/nullable_nonempty_string"
+    },
+    "ai_relation": {
+      "type": "string",
+      "enum": [
+        "none",
+        "ai_assisted_development",
+        "ai_ml_engineering",
+        "generative_ai_llm",
+        "ai_agents_or_orchestration",
+        "ai_evaluation_safety",
+        "ai_scientific_application",
+        "ambiguous_ai"
+      ]
+    },
+    "extraction_method": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "extractor_model": {
+      "$ref": "#/$defs/nullable_nonempty_string"
+    },
+    "prompt_version": {
+      "$ref": "#/$defs/nullable_nonempty_string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "human_verified": {
+      "type": "boolean"
+    },
+    "adjudication_note": {
+      "$ref": "#/$defs/nullable_nonempty_string"
+    }
+  },
+  "$defs": {
+    "run_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])_bioinfo_jobs_us_v[0-9]{2}$"
+    },
+    "nonempty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nullable_nonempty_string": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullable_identifier": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_.-]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullable_nonnegative_number": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

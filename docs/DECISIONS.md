@@ -47,3 +47,13 @@ Run metadata begins in an explicit pre-collection state with null timestamps,
 zero funnel counts, and no reviewer; those fields may change only from observed
 run events and human decisions. Semantic controlled-value changes require review
 and an appended decision rather than silent replacement.
+
+## D007 — 2026-08-12 — Record-schema boundary
+
+Run, job, atomic-requirement, and evidence records use JSON Schema Draft
+2020-12 contracts that require specification fields, reject undeclared fields,
+preserve explicit nulls, check formats and ranges, and mirror codebook enums.
+Tests make codebook/schema drift a failure. Cross-record foreign keys and
+ordered comparisons remain pipeline checks because they are not reliably
+expressible in portable JSON Schema. Taxonomy identifiers remain nullable until
+M05 establishes taxonomy 1.0.0; M04 does not assign or change taxonomy meaning.
