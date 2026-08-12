@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cjgunase.github.io/schemas/bioinformatics-job-market-analysis/evidence.schema.json",
+  "title": "Job-posting evidence",
+  "description": "One verbatim evidence record for BSE-JMA-001 specification 1.1.1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "job_id",
+    "source_url",
+    "retrieved_at",
+    "source_section",
+    "paragraph_or_bullet_index",
+    "char_start",
+    "char_end",
+    "verbatim_excerpt",
+    "excerpt_sha256",
+    "snapshot_sha256",
+    "capture_method",
+    "terms_retention_mode"
+  ],
+  "properties": {
+    "evidence_id": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "job_id": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_section": {
+      "$ref": "#/$defs/nullable_nonempty_string"
+    },
+    "paragraph_or_bullet_index": {
+      "$ref": "#/$defs/nullable_nonnegative_integer"
+    },
+    "char_start": {
+      "$ref": "#/$defs/nullable_nonnegative_integer"
+    },
+    "char_end": {
+      "$ref": "#/$defs/nullable_nonnegative_integer"
+    },
+    "verbatim_excerpt": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "excerpt_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "snapshot_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "capture_method": {
+      "$ref": "#/$defs/nonempty_string"
+    },
+    "terms_retention_mode": {
+      "type": "string",
+      "enum": [
+        "restricted_full_snapshot",
+        "permitted_full_snapshot",
+        "excerpt_hash_metadata_only"
+      ]
+    }
+  },
+  "$defs": {
+    "nonempty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nullable_nonempty_string": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/nonempty_string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullable_nonnegative_integer": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

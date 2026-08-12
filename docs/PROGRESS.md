@@ -54,3 +54,22 @@ Blockers: none. No collection was performed; candidate, included, reserve,
 evidence-validated, and human-reviewed counts remain zero.
 
 Next: M04 — implement JSON Schemas and schema-validation tests.
+
+## 2026-08-12 — M04 completed
+
+- Added strict Draft 2020-12 schemas for run, job, atomic-requirement, and
+  evidence records.
+- Added fail-closed validation with date, time, URI, hostname, hash, identifier,
+  controlled-value, nullability, and numeric-range checks.
+- Added representative valid records, invalid-record rejection tests, schema
+  self-validation, required/additional-field checks, and codebook-enum drift
+  checks.
+- Validated with locked dependency sync, Ruff lint and format checks, strict
+  mypy, pytest (32 passed), distribution builds, JSON parsing, and whitespace
+  checks.
+
+Blockers: none. No collection was performed; candidate, included, reserve,
+evidence-validated, and human-reviewed counts remain zero. Taxonomy identifiers
+remain unset pending M05.
+
+Next: M05 — establish taxonomy 1.0.0 and its governance changelog.

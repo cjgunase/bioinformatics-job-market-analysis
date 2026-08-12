@@ -36,6 +36,15 @@ collection window, zero funnel counts, absent taxonomy version, and absent human
 reviewer are deliberate. Production runs must populate those values from actual
 events; they must never copy the example as evidence of collection or approval.
 
+## Record schemas
+
+Draft 2020-12 JSON Schemas for run, job, atomic requirement, and evidence
+records live in [`schemas/`](schemas/README.md). They require every
+specification field, reject undeclared fields, enforce documented controlled
+values and formats, and preserve explicit nulls. The validation helper fails
+closed on invalid records, and the schema tests prevent enum drift from the
+codebook.
+
 ## Development setup
 
 The development environment is pinned to Python 3.13.11 and uv 0.9.27. Install
