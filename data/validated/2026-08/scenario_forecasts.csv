@@ -1,0 +1,1 @@
+forecast_id,scenario,horizon_months,evidence_cutoff_date,assumptions,leading_indicators,disconfirming_indicators,probability_low,probability_high,implications,human_approved,reviewer_id,reviewed_at
