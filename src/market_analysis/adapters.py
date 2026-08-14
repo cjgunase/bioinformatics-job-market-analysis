@@ -124,3 +124,42 @@ def parse_lever(payload: bytes) -> list[Posting]:
             )
         )
     return postings
+
+
+def parse_ashby(payload: bytes) -> list[Posting]:
+    document = _object(payload)
+    records = document.get("jobs")
+    if not isinstance(records, list):
+        raise ContractError("Ashby response missing jobs array")
+    postings: list[Posting] = []
+    for raw in records:
+        if not isinstance(raw, dict):
+            raise ContractError("Ashby job is not an object")
+        description = raw.get("descriptionPlain") or raw.get("descriptionHtml")
+        if not isinstance(description, str) or not description.strip():
+            raise ContractError("missing required string: description")
+        locations: list[str] = [_text(raw, "location")]
+        secondary = raw.get("secondaryLocations")
+        if isinstance(secondary, list):
+            for item in secondary:
+                if isinstance(item, dict):
+                    locations.append(_text(item, "location"))
+        if raw.get("isRemote") is True and "Remote" not in locations:
+            locations.append("Remote")
+        compensation = raw.get("compensation")
+        postings.append(
+            Posting(
+                source="ashby",
+                posting_id=_text(raw, "id"),
+                title=_text(raw, "title"),
+                description_text=html_to_text(description),
+                locations=tuple(dict.fromkeys(locations)),
+                canonical_url=_text(raw, "jobUrl"),
+                compensation=(
+                    json.dumps(compensation, sort_keys=True)
+                    if compensation is not None
+                    else None
+                ),
+            )
+        )
+    return postings
