@@ -1,6 +1,12 @@
 import pytest
 
-from market_analysis.analyze import Assertion, prevalence, wilson_interval
+from market_analysis.analyze import (
+    Assertion,
+    benjamini_hochberg,
+    compare_groups,
+    prevalence,
+    wilson_interval,
+)
 
 
 def test_wilson_known_value_and_bounds() -> None:
@@ -30,3 +36,25 @@ def test_prevalence_counts_each_skill_once_per_job_and_status() -> None:
 def test_wilson_rejects_invalid_inputs(successes: int, total: int) -> None:
     with pytest.raises(ValueError):
         wilson_interval(successes, total)
+
+
+def test_stratified_comparison_suppresses_small_groups_and_reports_effects() -> None:
+    assert compare_groups("small", 2, 14, 5, 20) is None
+    result = compare_groups("role_a_vs_b", 12, 30, 6, 30)
+    assert result is not None
+    assert result.percentage_point_difference == 20.0
+    assert result.prevalence_ratio == 2.0
+    assert result.test in {"fisher_exact_two_sided", "chi_square_1df"}
+
+
+def test_benjamini_hochberg_is_monotone_in_p_order() -> None:
+    comparisons = [
+        compare_groups("a", 18, 30, 3, 30),
+        compare_groups("b", 15, 30, 5, 30),
+        compare_groups("c", 12, 30, 6, 30),
+    ]
+    adjusted = benjamini_hochberg([row for row in comparisons if row is not None])
+    ordered = sorted(adjusted, key=lambda row: row.p_value)
+    assert all(row.q_value is not None for row in ordered)
+    q_values = [row.q_value or 0.0 for row in ordered]
+    assert q_values == sorted(q_values)
