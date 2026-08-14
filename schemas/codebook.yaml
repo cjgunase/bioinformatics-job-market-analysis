@@ -128,4 +128,4 @@ null_policy:
 governance:
   - Controlled values are exact snake_case identifiers.
   - Additions or semantic changes require a reviewed decision-log entry.
-  - Taxonomy skill and category identifiers are established separately in M05.
+  - Taxonomy skill and category identifiers are defined by taxonomy/taxonomy.yaml version 1.0.0.

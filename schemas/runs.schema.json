@@ -33,15 +33,7 @@
       "const": "1.1.1"
     },
     "taxonomy_version": {
-      "oneOf": [
-        {
-          "type": "string",
-          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
-        },
-        {
-          "type": "null"
-        }
-      ]
+      "const": "1.0.0"
     },
     "pipeline_version": {
       "type": "string",

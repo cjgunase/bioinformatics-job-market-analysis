@@ -1,7 +1,7 @@
 {
   "run_id": "2026-08_bioinfo_jobs_us_v01",
   "spec_version": "1.1.1",
-  "taxonomy_version": null,
+  "taxonomy_version": "1.0.0",
   "pipeline_version": "0.1.0",
   "config_version": "1.0.0",
   "collection_started_at": null,

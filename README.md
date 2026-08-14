@@ -32,9 +32,20 @@ be reviewed without silently changing study scope or thresholds.
 
 [`config/run_metadata.example.json`](config/run_metadata.example.json) records
 the required run fields in an explicitly pre-collection state. Its null
-collection window, zero funnel counts, absent taxonomy version, and absent human
-reviewer are deliberate. Production runs must populate those values from actual
-events; they must never copy the example as evidence of collection or approval.
+collection window, zero funnel counts, taxonomy 1.0.0 reference, and absent
+human reviewer are deliberate. Production runs must populate event and review
+fields from actual events; they must never copy the example as evidence of
+collection or approval.
+
+## Taxonomy
+
+The versioned, hierarchical skill taxonomy lives in
+[`taxonomy/taxonomy.yaml`](taxonomy/taxonomy.yaml), with append-only governance
+history in [`taxonomy/CHANGELOG.md`](taxonomy/CHANGELOG.md). Version 1.0.0
+implements specification 1.1.1 sections 8.1–8.13, including separate
+bioinformatics-context and durable AI-era competency categories. The initial
+implementation baseline is pending human review and does not authorize
+canonical market findings.
 
 ## Record schemas
 
