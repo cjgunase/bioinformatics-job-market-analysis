@@ -5,6 +5,7 @@ from __future__ import annotations
 import math
 from collections import Counter, defaultdict
 from dataclasses import dataclass
+from itertools import pairwise
 
 
 @dataclass(frozen=True)
@@ -48,6 +49,24 @@ class Cooccurrence:
     jaccard: float
     lift: float
     phi: float
+
+
+@dataclass(frozen=True)
+class TrendPoint:
+    month: str
+    numerator: int
+    denominator: int
+    taxonomy_version: str
+
+
+@dataclass(frozen=True)
+class SensitivityResult:
+    analysis: str
+    base_numerator: int
+    base_denominator: int
+    comparison_numerator: int
+    comparison_denominator: int
+    percentage_point_difference: float
 
 
 def wilson_interval(
@@ -246,3 +265,59 @@ def clustering_distance_inputs(
         ]
         for left in skills
     ]
+
+
+def trend_classification(points: list[TrendPoint]) -> str:
+    if len(points) < 2:
+        return "baseline"
+    if len({point.taxonomy_version for point in points}) != 1:
+        return "series_break_taxonomy"
+    qualifying = []
+    for previous, current in pairwise(points):
+        change = 100 * (
+            current.numerator / current.denominator
+            - previous.numerator / previous.denominator
+        )
+        if max(previous.numerator, current.numerator) >= 5 and abs(change) >= 3:
+            qualifying.append(change)
+    if not qualifying:
+        return "stable_or_insufficient"
+    latest = qualifying[-1]
+    if len(qualifying) < 2 or qualifying[-2] * latest <= 0:
+        return "watch_up" if latest > 0 else "watch_down"
+    return "rising" if latest > 0 else "falling"
+
+
+def sensitivity_result(
+    analysis: str,
+    base_success: int,
+    base_total: int,
+    comparison_success: int,
+    comparison_total: int,
+) -> SensitivityResult:
+    if min(base_total, comparison_total) <= 0:
+        raise ValueError("sensitivity denominators must be positive")
+    difference = 100 * (
+        comparison_success / comparison_total - base_success / base_total
+    )
+    return SensitivityResult(
+        analysis,
+        base_success,
+        base_total,
+        comparison_success,
+        comparison_total,
+        round(difference, 6),
+    )
+
+
+def missing_data_summary(
+    all_job_ids: set[str], usable_by_field: dict[str, set[str]]
+) -> dict[str, dict[str, int]]:
+    return {
+        field: {
+            "total_jobs": len(all_job_ids),
+            "usable_jobs": len(all_job_ids & usable),
+            "missing_jobs": len(all_job_ids - usable),
+        }
+        for field, usable in sorted(usable_by_field.items())
+    }

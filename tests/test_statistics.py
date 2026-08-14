@@ -2,11 +2,15 @@ import pytest
 
 from market_analysis.analyze import (
     Assertion,
+    TrendPoint,
     benjamini_hochberg,
     clustering_distance_inputs,
     compare_groups,
     cooccurrence_pairs,
+    missing_data_summary,
     prevalence,
+    sensitivity_result,
+    trend_classification,
     wilson_interval,
 )
 
@@ -83,3 +87,29 @@ def test_cooccurrence_metrics_support_gate_and_clustering_inputs() -> None:
     assert distances[0][0] == 0
     assert distances[0][1] == 0
     assert distances[0][2] == 1
+
+
+def test_trends_require_sustained_comparable_changes() -> None:
+    baseline = TrendPoint("2026-06", 10, 100, "1.0.0")
+    watch = TrendPoint("2026-07", 14, 100, "1.0.0")
+    confirmed = TrendPoint("2026-08", 18, 100, "1.0.0")
+    assert trend_classification([baseline]) == "baseline"
+    assert trend_classification([baseline, watch]) == "watch_up"
+    assert trend_classification([baseline, watch, confirmed]) == "rising"
+    assert (
+        trend_classification([baseline, TrendPoint("2026-07", 14, 100, "2.0.0")])
+        == "series_break_taxonomy"
+    )
+
+
+def test_sensitivity_and_missing_data_keep_denominators_visible() -> None:
+    result = sensitivity_result("first_party_only", 30, 150, 24, 100)
+    assert result.percentage_point_difference == 4.0
+    summary = missing_data_summary(
+        {"j1", "j2", "j3"}, {"requirements": {"j1", "j2"}, "salary": {"j1"}}
+    )
+    assert summary["requirements"] == {
+        "total_jobs": 3,
+        "usable_jobs": 2,
+        "missing_jobs": 1,
+    }
