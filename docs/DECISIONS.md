@@ -83,3 +83,17 @@ and human-only decisions remain binding. The agent must complete only verified
 automatable work, must not invent live evidence, and must stop with an accurate
 `awaiting_human_review` status at the mandatory sign-off gate. The override is
 closed at the end of this one-shot run and does not create or re-enable a cron.
+
+## D010 — 2026-08-14 — Insufficiency branch and publication stop
+
+The first live pool screened 918 postings from 36 active, publicly observed ATS
+boards. Deterministic rules retained 105 before human review, but the mandatory
+five-posting company cap leaves a maximum of 80. This cannot fill the 150-record
+sample or 20-record reserve. M37 therefore takes its specification-defined
+insufficiency branch: no manifest is frozen, M38–M42 remain dependency-blocked,
+and no monthly estimate, publication candidate, or time-series update is
+generated. Eligibility, geography, diversity, evidence, and human-review rules
+remain unchanged. Safe continuation requires additional publicly observed
+employers and a new one-shot collection, or explicit human approval for the
+specification's noncanonical reduced-sample special edition. D009 is now closed
+and the normal daily limit is restored.

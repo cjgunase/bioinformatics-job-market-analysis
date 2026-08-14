@@ -3,13 +3,13 @@
   "study_id": "BSE-JMA-001",
   "spec_version": "1.1.1",
   "timezone": "America/New_York",
-  "daily_milestone_limit": 42,
-  "current_milestone": "M06",
-  "last_completed_milestone": "M05",
+  "daily_milestone_limit": 1,
+  "current_milestone": "M38",
+  "last_completed_milestone": "M37",
   "last_completed_milestone_date": "2026-08-14",
   "last_run_date": "2026-08-14",
-  "last_run_outcome": "completion_run_in_progress",
-  "status": "active",
+  "last_run_outcome": "blocked_insufficient_eligible_pool",
+  "status": "blocked",
   "human_gate_required": true,
   "canonical_publication_approved": false,
   "pacing_override": {
@@ -22,6 +22,11 @@
     ],
     "other_rules_preserved": true,
     "one_shot": true,
-    "active": true
-  }
+    "authorized_daily_milestone_limit": 42,
+    "active": false,
+    "closed_at": "2026-08-14T05:30:00Z",
+    "closure_reason": "M37 documented an 80-posting maximum after the company cap, below the required 150 plus reserve; M38 is not dependency-ready."
+  },
+  "blocking_evidence": "reports/2026-08/insufficiency_report.md",
+  "smallest_safe_continuation": "Expand the publicly observed registry and run another one-shot collection within the seven-day window without changing scope or thresholds."
 }
