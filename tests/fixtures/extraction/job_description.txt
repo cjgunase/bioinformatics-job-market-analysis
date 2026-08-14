@@ -1,0 +1,5 @@
+Responsibilities:
+- Build Python pipelines in AWS using Docker.
+- Validate genomic analyses with reproducible tests.
+Preferred:
+- Experience with Nextflow.
