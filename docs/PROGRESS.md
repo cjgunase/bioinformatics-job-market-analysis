@@ -94,3 +94,48 @@ Blockers: none. No collection was performed; candidate, included, reserve,
 evidence-validated, and human-reviewed counts remain zero.
 
 Next: M06 — add the versioned discovery-query catalogue.
+
+## 2026-08-14 — Authorized completion run started
+
+- Confirmed M05 was already merged in GitHub PR #5 with passing CI; it will not
+  be duplicated.
+- Started a one-shot, owner-authorized sequential run from M06. Decision D009
+  records that only the daily pacing rule is overridden.
+- Wrote the run plan before implementation or collection. No collection or
+  publication approval is claimed by this checkpoint.
+
+Next: M06 — add the versioned discovery-query catalogue.
+
+## 2026-08-14 — M06–M37 one-shot completion run
+
+- Completed M06–M30 sequentially in reviewable commits: versioned discovery,
+  employer registry, fail-closed acquisition adapters and contract monitoring,
+  append-only screening, lawful capture, exact/near deduplication, deterministic
+  sampling, extraction/classification interfaces, Track A statistics, Track B
+  evidence/scenario machinery, accessible draft generation, safety gates, a
+  single-command pipeline, and synthetic end-to-end verification.
+- Completed M31–M35 with current official contract checks and low-rate public
+  reads only. Greenhouse, Lever, and Ashby example feeds passed their documented
+  read contracts; one stale Neptune board and one stale Insitro board returned
+  404 and remain inactive. The registry reached 38 rows, 36 active boards, eight
+  sectors, and 918 hash-chained metadata-only discovery records. No application,
+  candidate, administrative, or authenticated endpoint was called.
+- Completed M36 by screening all 918 current postings, retaining only hashes and
+  excerpts of at most 320 characters. Results: 105 deterministic pre-review
+  inclusions, zero exact duplicates, and eight near-duplicate pairs queued for
+  human adjudication. Automated privacy, copyright, link, schema, and provenance
+  checks passed; raw descriptions were not committed.
+- Completed M37 through its documented insufficiency branch. The company cap
+  reduces the maximum selectable pool to 80, 70 below the final sample and 90
+  below sample plus reserve. No manifest was frozen and no canonical estimate,
+  publication candidate, or time-series update was produced.
+- Validated the completed tree locally with Ruff lint and format checks, strict
+  mypy, and 133 passing pytest tests. GitHub CI status is recorded separately
+  after the review branch is pushed.
+- Closed the dated pacing override and restored `daily_milestone_limit` to 1.
+
+Blocking evidence: `reports/2026-08/insufficiency_report.md`.
+
+Next: expand the publicly observed registry and run another one-shot collection
+within the seven-day window. M38 is not dependency-ready until a compliant
+150-record sample and 20-record reserve can be frozen.

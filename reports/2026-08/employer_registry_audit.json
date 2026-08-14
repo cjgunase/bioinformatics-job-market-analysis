@@ -1,0 +1,41 @@
+{
+  "audited_at": "2026-08-14T04:53:03Z",
+  "registry_rows": 15,
+  "active_rows": 14,
+  "inactive_rows": 1,
+  "ats_counts": {
+    "greenhouse": 12,
+    "ashby": 3,
+    "lever": 0
+  },
+  "sector_counts": {
+    "ai_enabled_drug_discovery": 3,
+    "biopharma": 2,
+    "biotechnology_tools": 2,
+    "contract_research_services": 2,
+    "diagnostics_clinical_labs": 1,
+    "genomics_sequencing": 1,
+    "health_tech": 1,
+    "scientific_software_platform": 3
+  },
+  "represented_sector_groups": 8,
+  "response_summary": {
+    "http_200": 14,
+    "http_404": 1,
+    "parsed_postings_across_active_boards": 195
+  },
+  "inactive_boards": [
+    {
+      "employer_id": "emp_neptune_bio",
+      "http_status": 404,
+      "disposition": "inactive; do not query for discovery unless a new public employer link is observed"
+    }
+  ],
+  "governance": {
+    "identifiers_guessed": 0,
+    "bulk_identifier_enumeration_used": false,
+    "application_endpoints_called": false,
+    "raw_job_text_committed": false
+  },
+  "assessment": "This is a verified initial expansion with eight represented sectors, not the recommended mature 300-500-board universe. Continue evidence-led expansion; do not treat registry counts as sample quotas."
+}

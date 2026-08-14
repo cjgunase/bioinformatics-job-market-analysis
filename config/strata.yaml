@@ -1,0 +1,18 @@
+strata_version: 1.0.0
+dimensions: [sector, role_family, seniority, location_mode]
+controls:
+  company_cap: 5
+  template_cap: 3
+  minimum_sector_groups: 6
+  maximum_sector_fraction: 0.30
+  minimum_role_families: 4
+  maximum_role_family_fraction: 0.40
+  required_seniority: [entry_associate, mid_level, senior_plus]
+  require_onsite_or_hybrid: true
+  require_remote: true
+  minimum_first_party_fraction: 0.70
+  minimum_reserve_pool: 20
+allocation:
+  ordering: sha256(run_id + canonical_job_id)
+  method: deterministic diversity-floor seeding then capped fill
+  scarcity_exception_requires_human: true

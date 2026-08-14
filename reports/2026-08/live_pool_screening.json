@@ -1,0 +1,26 @@
+{
+  "decision_reason_counts": {
+    "exclude_academic": 7,
+    "exclude_geography": 17,
+    "exclude_internship": 4,
+    "exclude_not_engineering": 542,
+    "exclude_not_life_science": 243,
+    "include_meets_all": 105
+  },
+  "deterministic_include_before_dedup_n": 105,
+  "eligible_unique_n": 105,
+  "exact_duplicate_exclusions_n": 0,
+  "human_review_complete": false,
+  "automated_gates": {
+    "copyright": "passed: maximum committed audit excerpt is 320 characters",
+    "links": "passed: all 105 canonical URL values are syntactically valid",
+    "privacy": "passed: no configured secret pattern found",
+    "provenance": "passed: all 105 eligible records contain required source and verification metadata"
+  },
+  "near_duplicate_pairs_n": 8,
+  "raw_descriptions_committed": false,
+  "retrieved_at": "2026-08-14T05:05:16Z",
+  "run_id": "2026-08_bioinfo_jobs_us_v01",
+  "screened_n": 918,
+  "snapshot_retention_mode": "excerpt_hash_metadata_only"
+}

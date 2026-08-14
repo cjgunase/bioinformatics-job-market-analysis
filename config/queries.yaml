@@ -1,0 +1,30 @@
+catalog_version: 1.0.0
+spec_version: 1.1.1
+geography: US
+queries:
+  - {query_id: q001, family: title_forward, query: bioinformatics engineer}
+  - {query_id: q002, family: title_forward, query: bioinformatics software engineer}
+  - {query_id: q003, family: title_forward, query: computational biologist}
+  - {query_id: q004, family: title_forward, query: computational scientist genomics}
+  - {query_id: q005, family: title_forward, query: scientific software engineer biology}
+  - {query_id: q006, family: title_forward, query: genomics engineer}
+  - {query_id: q007, family: capability_forward, query: workflow engineer genomics}
+  - {query_id: q008, family: capability_forward, query: pipeline engineer bioinformatics}
+  - {query_id: q009, family: capability_forward, query: platform engineer life sciences}
+  - {query_id: q010, family: capability_forward, query: machine learning engineer biology}
+  - {query_id: q011, family: capability_forward, query: AI engineer drug discovery}
+  - {query_id: q012, family: capability_forward, query: research engineer biological foundation model}
+  - {query_id: q013, family: capability_forward, query: Nextflow engineer}
+  - {query_id: q014, family: capability_forward, query: Snakemake engineer}
+  - {query_id: q015, family: capability_forward, query: single-cell computational}
+  - {query_id: q016, family: capability_forward, query: clinical bioinformatics software}
+  - {query_id: q017, family: title_forward, query: research software engineer genomics}
+  - {query_id: q018, family: title_forward, query: applied scientist biological data}
+  - {query_id: q019, family: capability_forward, query: WDL Cromwell engineer genomics}
+  - {query_id: q020, family: capability_forward, query: scientific platform cloud biology}
+
+governance:
+  record_each_run: [query_id, exact_query, source, run_at_utc, returned_url]
+  generic_title_requires_full_text: true
+  discovery_only_is_not_inclusion_evidence: true
+  semantic_changes_require_review: true
