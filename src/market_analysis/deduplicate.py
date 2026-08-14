@@ -23,6 +23,14 @@ class DedupRecord:
     comparison_text: str
 
 
+@dataclass(frozen=True)
+class NearDuplicatePair:
+    left_job_id: str
+    right_job_id: str
+    similarity: float
+    disposition: str
+
+
 def canonicalize_url(url: str) -> str:
     parts = urlsplit(url)
     query = [
@@ -80,3 +88,37 @@ def exact_duplicate_groups(records: list[DedupRecord]) -> list[tuple[str, ...]]:
             keys.setdefault(key, []).append(record.job_id)
     groups = {tuple(sorted(ids)) for ids in keys.values() if len(set(ids)) > 1}
     return sorted(groups)
+
+
+def token_similarity(left: str, right: str) -> float:
+    left_tokens = set(normalize_label(left).split())
+    right_tokens = set(normalize_label(right).split())
+    union = left_tokens | right_tokens
+    return len(left_tokens & right_tokens) / len(union) if union else 1.0
+
+
+def near_duplicate_candidates(records: list[DedupRecord]) -> list[NearDuplicatePair]:
+    pairs: list[NearDuplicatePair] = []
+    for left_index, left in enumerate(records):
+        for right in records[left_index + 1 :]:
+            if left.company_domain.lower() != right.company_domain.lower():
+                continue
+            similarity = token_similarity(left.comparison_text, right.comparison_text)
+            title_matches = normalize_label(left.title) == normalize_label(right.title)
+            if similarity >= 0.90 and title_matches:
+                disposition = "duplicate_candidate"
+            elif 0.82 <= similarity < 0.90:
+                disposition = "pending_human"
+            else:
+                continue
+            pairs.append(
+                NearDuplicatePair(
+                    left.job_id, right.job_id, round(similarity, 6), disposition
+                )
+            )
+    return pairs
+
+
+def template_fingerprint(text: str) -> str:
+    normalized = normalize_label(text)
+    return hashlib.sha256(normalized.encode()).hexdigest()

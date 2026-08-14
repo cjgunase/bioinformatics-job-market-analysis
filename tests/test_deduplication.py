@@ -3,7 +3,9 @@ from market_analysis.deduplicate import (
     canonical_job_id,
     canonicalize_url,
     exact_duplicate_groups,
+    near_duplicate_candidates,
     normalize_label,
+    template_fingerprint,
 )
 
 
@@ -48,3 +50,30 @@ def test_exact_duplicates_detect_url_requisition_and_text() -> None:
     groups = exact_duplicate_groups(records)
     assert ("a", "b") in groups
     assert ("c", "d") in groups
+
+
+def test_near_duplicates_route_uncertain_band_to_human() -> None:
+    common = "python workflow cloud testing reproducibility genomics pipelines docker"
+    records = [
+        record("a", comparison_text=common),
+        record("b", comparison_text=common + " aws"),
+        record("c", comparison_text=common + " aws sql"),
+    ]
+    pairs = near_duplicate_candidates(records)
+    assert pairs[0].disposition == "pending_human"
+    assert any(pair.disposition == "duplicate_candidate" for pair in pairs)
+
+
+def test_near_duplicate_comparison_is_scoped_to_same_employer() -> None:
+    rows = [
+        record("a", comparison_text="one two three"),
+        record(
+            "b",
+            company_domain="different.org",
+            comparison_text="one two three",
+        ),
+    ]
+    assert near_duplicate_candidates(rows) == []
+    assert template_fingerprint("Same  Template!") == template_fingerprint(
+        "same template"
+    )
