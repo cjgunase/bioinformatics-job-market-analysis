@@ -54,10 +54,10 @@
       ]
     },
     "taxonomy_category_id": {
-      "$ref": "#/$defs/nullable_identifier"
+      "$ref": "#/$defs/identifier"
     },
     "taxonomy_skill_id": {
-      "$ref": "#/$defs/nullable_identifier"
+      "$ref": "#/$defs/identifier"
     },
     "tool_or_technology_raw": {
       "$ref": "#/$defs/nullable_nonempty_string"
@@ -127,16 +127,9 @@
         }
       ]
     },
-    "nullable_identifier": {
-      "oneOf": [
-        {
-          "type": "string",
-          "pattern": "^[a-z0-9][a-z0-9_.-]*$"
-        },
-        {
-          "type": "null"
-        }
-      ]
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_]*$"
     },
     "nullable_nonnegative_number": {
       "oneOf": [

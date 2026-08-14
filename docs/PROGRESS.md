@@ -73,3 +73,24 @@ evidence-validated, and human-reviewed counts remain zero. Taxonomy identifiers
 remain unset pending M05.
 
 Next: M05 — establish taxonomy 1.0.0 and its governance changelog.
+
+## 2026-08-14 — M05 completed
+
+- Established taxonomy 1.0.0 with 187 hierarchical skill nodes across all 13
+  specification-defined software-engineering, bioinformatics-context, AI, and
+  durable AI-era categories.
+- Added stable identifiers, definitions, inclusion and exclusion rules,
+  aliases, parent links, tool and AI flags, lifecycle metadata, and an
+  append-only governance changelog with migration and backcast requirements.
+- Pinned study configuration and run metadata to taxonomy 1.0.0 and made
+  taxonomy identifiers mandatory in atomic requirement records.
+- Preserved the human gate: the implementation baseline is pending initial
+  human review and remains ineligible for canonical market findings.
+- Validated with locked dependency sync, Ruff lint and format checks, strict
+  mypy, pytest (39 passed), distribution builds, JSON parsing, and whitespace
+  checks.
+
+Blockers: none. No collection was performed; candidate, included, reserve,
+evidence-validated, and human-reviewed counts remain zero.
+
+Next: M06 — add the versioned discovery-query catalogue.

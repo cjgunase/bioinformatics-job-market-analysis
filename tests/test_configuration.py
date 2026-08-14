@@ -28,7 +28,7 @@ def test_study_configuration_matches_approved_defaults() -> None:
     assert config["config_version"] == "1.0.0"
     assert config["study_id"] == "BSE-JMA-001"
     assert config["spec_version"] == "1.1.1"
-    assert config["taxonomy_version"] is None
+    assert config["taxonomy_version"] == "1.0.0"
     assert config["timezone"] == "America/New_York"
 
     scope = _mapping(config["scope"])
@@ -110,5 +110,5 @@ def test_run_metadata_template_is_explicitly_pre_collection() -> None:
     assert metadata["included_n"] == 0
     assert metadata["candidate_n"] == 0
     assert metadata["reserve_n"] == 0
-    assert metadata["taxonomy_version"] is None
+    assert metadata["taxonomy_version"] == "1.0.0"
     assert metadata["human_reviewer"] is None

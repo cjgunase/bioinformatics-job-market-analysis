@@ -12,7 +12,9 @@ and validate one record at a time:
 All schemas reject undeclared properties and require every specification field.
 Nullable fields remain explicit JSON `null`; empty strings are not substitutes
 for missing values. Controlled enums mirror `codebook.yaml`, and tests fail if
-the two sources drift.
+the two sources drift. Taxonomy identifiers are required now that taxonomy
+1.0.0 exists; cross-artifact tests ensure representative identifiers resolve to
+the versioned taxonomy.
 
 The schemas enforce structural constraints, formats, identifier patterns,
 controlled values, and numeric ranges. Cross-record and ordered comparisons—

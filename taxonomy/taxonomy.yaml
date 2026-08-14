@@ -1,0 +1,1378 @@
+taxonomy_version: 1.0.0
+spec_version: 1.1.1
+status: implementation_baseline
+human_review_status: pending_initial_review
+canonical_findings_eligible: false
+coding_rule: Code the most specific explicitly supported skill and roll up through parent_skill_id.
+context_rule: Bioinformatics context nodes are reported separately and do not count as software-engineering competencies by themselves.
+ai_rule: Generic automation, algorithms, statistical modeling, and conventional bioinformatics are not AI evidence.
+
+categories:
+  - category_id: programming_software_construction
+    preferred_label: Programming and software construction
+    definition: Languages and practices used to construct and improve software.
+  - category_id: version_control_collaboration
+    preferred_label: Version control and collaboration
+    definition: Source-control tools and collaborative software-development practices.
+  - category_id: testing_quality_reliability
+    preferred_label: Testing, quality, and reliability
+    definition: Practices that test, observe, validate, and operate reliable software.
+  - category_id: build_release_devops
+    preferred_label: Build, release, and DevOps
+    definition: Build, dependency, deployment, release, and artifact-management practices.
+  - category_id: containers_orchestration_cloud
+    preferred_label: Containers, orchestration, and cloud
+    definition: Container, orchestration, and cloud platforms and practices.
+  - category_id: workflow_scientific_computing
+    preferred_label: Workflow and scientific computing
+    definition: Scientific workflow systems and computational execution practices.
+  - category_id: data_engineering_platforms
+    preferred_label: Data engineering and platforms
+    definition: Data storage, movement, modeling, quality, search, and governance.
+  - category_id: architecture_product_engineering
+    preferred_label: Architecture and product engineering
+    definition: System architecture, service, platform, and user-facing engineering.
+  - category_id: security_privacy_regulated_engineering
+    preferred_label: Security, privacy, and regulated engineering
+    definition: Technical security, privacy, compliance, and regulated lifecycle controls.
+  - category_id: documentation_engineering_process
+    preferred_label: Documentation and engineering process
+    definition: Documentation, delivery process, communication, and technical leadership.
+  - category_id: bioinformatics_engineering_context
+    preferred_label: Bioinformatics engineering context
+    definition: Biological domains and scientific-computing contexts reported separately from engineering prevalence.
+  - category_id: ai_engineering
+    preferred_label: AI-related engineering
+    definition: Explicit AI-assisted development, ML, generative AI, agents, evaluation, and scientific AI.
+  - category_id: durable_ai_era_engineering
+    preferred_label: Durable AI-era engineering competencies
+    definition: Competencies for directing, understanding, verifying, governing, and maintaining agent-produced systems.
+
+skill_defaults: &skill_defaults
+  taxonomy_version: 1.0.0
+  category_id: null
+  skill_id: null
+  preferred_label: null
+  definition: null
+  include_when: null
+  exclude_when: Do not infer the skill from a title, adjacent technology, or unstated practice.
+  aliases: []
+  parent_skill_id: null
+  is_tool: false
+  is_ai_related: false
+  introduced_in_version: 1.0.0
+  deprecated_in_version: null
+
+skills:
+  # 8.1 Programming and software construction
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: programming_languages
+    preferred_label: Programming languages
+    definition: Explicit use of one or more named programming or query languages.
+    include_when: A language is explicitly requested for implementation, analysis, scripting, or querying.
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: python
+    preferred_label: Python
+    definition: Programming or scripting with Python.
+    include_when: Python is named as a language or implementation requirement.
+    aliases: [Python 3]
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: r_language
+    preferred_label: R
+    definition: Programming or analysis with the R language.
+    include_when: R is named as a programming or analysis language.
+    aliases: [R programming]
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: bash_shell
+    preferred_label: Bash or shell
+    definition: Shell scripting, including Bash.
+    include_when: Bash, shell scripting, or a named Unix shell is explicit.
+    aliases: [Bash, shell scripting]
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: sql
+    preferred_label: SQL
+    definition: Querying or programming with SQL.
+    include_when: SQL is explicitly requested.
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: java
+    preferred_label: Java
+    definition: Software development with Java.
+    include_when: Java is explicitly requested.
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: cpp
+    preferred_label: C or C++
+    definition: Software development with C, C++, or both.
+    include_when: C or C++ is explicitly requested.
+    aliases: [C, C++]
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: javascript_typescript
+    preferred_label: JavaScript or TypeScript
+    definition: Software development with JavaScript or TypeScript.
+    include_when: JavaScript, TypeScript, or both are explicitly requested.
+    aliases: [JavaScript, TypeScript]
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: go_language
+    preferred_label: Go
+    definition: Software development with the Go language.
+    include_when: Go or Golang is explicitly requested.
+    aliases: [Golang]
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: rust
+    preferred_label: Rust
+    definition: Software development with Rust.
+    include_when: Rust is explicitly requested.
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: scala
+    preferred_label: Scala
+    definition: Software development with Scala.
+    include_when: Scala is explicitly requested.
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: julia
+    preferred_label: Julia
+    definition: Scientific or general software development with Julia.
+    include_when: Julia is explicitly requested.
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: matlab
+    preferred_label: MATLAB
+    definition: Scientific programming with MATLAB.
+    include_when: MATLAB is explicitly requested.
+    parent_skill_id: programming_languages
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: other_named_language
+    preferred_label: Other named programming language
+    definition: A named programming language without a dedicated taxonomy node.
+    include_when: The posting explicitly names another implementation language; preserve its raw name.
+    parent_skill_id: programming_languages
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: modular_design
+    preferred_label: Modular design
+    definition: Designing software as cohesive, separable modules.
+    include_when: Modular software design is explicit.
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: programming_paradigms
+    preferred_label: Object-oriented or functional design
+    definition: Explicit object-oriented or functional programming design.
+    include_when: Object-oriented or functional design is requested.
+    aliases: [object-oriented programming, functional programming]
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: algorithms_data_structures
+    preferred_label: Algorithms and data structures
+    definition: Designing or applying algorithms and data structures.
+    include_when: Algorithms or data structures are explicit engineering requirements.
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: api_development
+    preferred_label: API development
+    definition: Implementing programmatic interfaces.
+    include_when: Building or maintaining APIs is explicit.
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: cli_development
+    preferred_label: CLI development
+    definition: Building command-line interfaces or tools.
+    include_when: CLI or command-line tool development is explicit.
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: libraries_packages
+    preferred_label: Libraries and packages
+    definition: Building reusable software libraries or packages.
+    include_when: Library, SDK, or package development is explicit.
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: code_quality_refactoring
+    preferred_label: Code quality and refactoring
+    definition: Improving code structure, clarity, or maintainability.
+    include_when: Refactoring, maintainability, or code-quality work is explicit.
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: performance_optimization
+    preferred_label: Performance optimization
+    definition: Profiling or improving runtime, memory, or throughput.
+    include_when: Software performance optimization is explicit.
+  - <<: *skill_defaults
+    category_id: programming_software_construction
+    skill_id: parallel_concurrent_programming
+    preferred_label: Parallel or concurrent programming
+    definition: Implementing parallel or concurrent software.
+    include_when: Parallelism or concurrency at the program level is explicit.
+
+  # 8.2 Version control and collaboration
+  - <<: *skill_defaults
+    category_id: version_control_collaboration
+    skill_id: git
+    preferred_label: Git
+    definition: Version control using Git.
+    include_when: Git is explicitly requested.
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: version_control_collaboration
+    skill_id: source_code_hosting
+    preferred_label: GitHub, GitLab, or Bitbucket
+    definition: Collaboration through a named source-code hosting platform.
+    include_when: GitHub, GitLab, or Bitbucket is explicit.
+    aliases: [GitHub, GitLab, Bitbucket]
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: version_control_collaboration
+    skill_id: branching_pull_requests
+    preferred_label: Branching and pull requests
+    definition: Branch-based changes and pull or merge request workflows.
+    include_when: Branching, pull requests, or merge requests are explicit.
+    aliases: [merge requests]
+  - <<: *skill_defaults
+    category_id: version_control_collaboration
+    skill_id: code_review
+    preferred_label: Code review
+    definition: Reviewing software changes for correctness and quality.
+    include_when: Performing or participating in code review is explicit.
+  - <<: *skill_defaults
+    category_id: version_control_collaboration
+    skill_id: issue_tracking
+    preferred_label: Issue tracking
+    definition: Managing software work through issue or ticket systems.
+    include_when: Issue tracking or a named issue system is explicit.
+  - <<: *skill_defaults
+    category_id: version_control_collaboration
+    skill_id: collaborative_development
+    preferred_label: Collaborative development
+    definition: Shared engineering work in a multi-contributor codebase.
+    include_when: Collaborative software development is explicit beyond generic teamwork.
+  - <<: *skill_defaults
+    category_id: version_control_collaboration
+    skill_id: open_source_contribution
+    preferred_label: Open-source contribution
+    definition: Contributing to or maintaining open-source software.
+    include_when: Open-source contribution or maintenance is explicit.
+
+  # 8.3 Testing, quality, and reliability
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: software_testing
+    preferred_label: Software testing
+    definition: Designing or implementing tests for software behavior.
+    include_when: Testing software is explicit without a more specific test type.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: unit_testing
+    preferred_label: Unit testing
+    definition: Testing isolated software units.
+    include_when: Unit tests or unit testing are explicit.
+    parent_skill_id: software_testing
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: integration_testing
+    preferred_label: Integration testing
+    definition: Testing interactions among components or services.
+    include_when: Integration tests or integration testing are explicit.
+    parent_skill_id: software_testing
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: end_to_end_testing
+    preferred_label: End-to-end testing
+    definition: Testing complete user or system workflows.
+    include_when: End-to-end or system-wide workflow testing is explicit.
+    aliases: [E2E testing]
+    parent_skill_id: software_testing
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: regression_testing
+    preferred_label: Regression testing
+    definition: Testing that existing behavior remains intact after change.
+    include_when: Regression tests or regression testing are explicit.
+    parent_skill_id: software_testing
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: property_based_testing
+    preferred_label: Property-based testing
+    definition: Testing general properties over generated inputs.
+    include_when: Property-based or generative testing is explicit.
+    parent_skill_id: software_testing
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: performance_testing
+    preferred_label: Performance testing
+    definition: Testing latency, throughput, scale, or resource use.
+    include_when: Performance, load, scale, or benchmark testing is explicit.
+    parent_skill_id: software_testing
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: validation_testing
+    preferred_label: Validation testing
+    definition: Testing software against declared intended use or acceptance criteria.
+    include_when: Validation testing or formal software validation is explicit.
+    parent_skill_id: software_testing
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: test_automation
+    preferred_label: Test automation
+    definition: Automating test execution and reporting.
+    include_when: Automated testing or test automation is explicit.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: scientific_validation
+    preferred_label: Scientific validation
+    definition: Validating analytical or biological correctness beyond software execution.
+    include_when: Scientific, analytical, or biological validation is explicit.
+    exclude_when: Do not infer scientific validity from test passage alone.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: reproducibility
+    preferred_label: Reproducibility
+    definition: Recreating results from declared inputs and environments.
+    include_when: Reproducibility or reproducible analysis/software is explicit.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: observability
+    preferred_label: Observability
+    definition: Instrumenting systems to understand internal state and behavior.
+    include_when: Observability or telemetry engineering is explicit.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: logging
+    preferred_label: Logging
+    definition: Implementing or operating application and system logs.
+    include_when: Logging is an explicit technical requirement.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: monitoring
+    preferred_label: Monitoring
+    definition: Tracking system health, behavior, or service indicators.
+    include_when: Software or infrastructure monitoring is explicit.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: error_handling
+    preferred_label: Error handling
+    definition: Designing explicit failure detection and recovery behavior.
+    include_when: Error handling or failure recovery is explicit.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: incident_response
+    preferred_label: Incident response
+    definition: Diagnosing, mitigating, and learning from production incidents.
+    include_when: Incident response or on-call incident handling is explicit.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: reliability_sre
+    preferred_label: Reliability or SRE
+    definition: Engineering reliable services using SRE or equivalent practices.
+    include_when: Reliability engineering, SRE, SLOs, or SLIs are explicit.
+    aliases: [SRE]
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: static_analysis
+    preferred_label: Static analysis
+    definition: Analyzing code without executing it to find defects or risks.
+    include_when: Static analysis is explicit.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: linting
+    preferred_label: Linting
+    definition: Automated source-style or defect checks using linters.
+    include_when: Linting or a named linter is explicit.
+  - <<: *skill_defaults
+    category_id: testing_quality_reliability
+    skill_id: type_checking
+    preferred_label: Type checking
+    definition: Static or runtime checking of declared types.
+    include_when: Type checking or a named type checker is explicit.
+
+  # 8.4 Build, release, and DevOps
+  - <<: *skill_defaults
+    category_id: build_release_devops
+    skill_id: ci_cd
+    preferred_label: CI/CD
+    definition: Continuous integration or continuous delivery/deployment.
+    include_when: CI, CD, or continuous integration/delivery is explicit.
+  - <<: *skill_defaults
+    category_id: build_release_devops
+    skill_id: build_systems
+    preferred_label: Build systems
+    definition: Configuring or maintaining reproducible software builds.
+    include_when: Build systems, build tooling, or build configuration is explicit.
+  - <<: *skill_defaults
+    category_id: build_release_devops
+    skill_id: dependency_environment_management
+    preferred_label: Dependency and environment management
+    definition: Managing software dependencies and execution environments.
+    include_when: Dependency, package-environment, or environment management is explicit.
+  - <<: *skill_defaults
+    category_id: build_release_devops
+    skill_id: package_publishing
+    preferred_label: Package publishing
+    definition: Publishing software packages to registries or repositories.
+    include_when: Package publication or distribution is explicit.
+  - <<: *skill_defaults
+    category_id: build_release_devops
+    skill_id: infrastructure_as_code
+    preferred_label: Infrastructure as code
+    definition: Defining infrastructure through versioned declarative code.
+    include_when: Infrastructure as code or a named IaC tool is explicit.
+    aliases: [IaC]
+  - <<: *skill_defaults
+    category_id: build_release_devops
+    skill_id: deployment_automation
+    preferred_label: Deployment automation
+    definition: Automating application or platform deployment.
+    include_when: Automated deployment is explicit.
+  - <<: *skill_defaults
+    category_id: build_release_devops
+    skill_id: release_versioning
+    preferred_label: Release and versioning
+    definition: Managing releases, versions, and compatibility.
+    include_when: Release engineering or versioning is explicit.
+  - <<: *skill_defaults
+    category_id: build_release_devops
+    skill_id: artifact_registries
+    preferred_label: Artifact registries
+    definition: Storing and governing build artifacts in registries.
+    include_when: Artifact, image, or package registries are explicit.
+
+  # 8.5 Containers, orchestration, and cloud
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: containers
+    preferred_label: Containers
+    definition: Packaging or running software in containers.
+    include_when: Containers or containerization are explicit.
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: docker
+    preferred_label: Docker
+    definition: Building or running containers with Docker.
+    include_when: Docker is explicitly requested.
+    parent_skill_id: containers
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: kubernetes
+    preferred_label: Kubernetes
+    definition: Deploying or operating workloads with Kubernetes.
+    include_when: Kubernetes is explicitly requested.
+    exclude_when: Do not infer Kubernetes from generic container experience.
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: serverless
+    preferred_label: Serverless
+    definition: Designing or operating serverless compute workloads.
+    include_when: Serverless architecture or functions-as-a-service is explicit.
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: cloud_computing
+    preferred_label: Cloud computing
+    definition: Engineering systems on public or private cloud platforms.
+    include_when: Cloud engineering is explicit without a more specific practice.
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: aws
+    preferred_label: AWS
+    definition: Engineering with Amazon Web Services.
+    include_when: AWS or Amazon Web Services is explicit.
+    aliases: [Amazon Web Services]
+    parent_skill_id: cloud_computing
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: gcp
+    preferred_label: Google Cloud
+    definition: Engineering with Google Cloud Platform.
+    include_when: GCP or Google Cloud is explicit.
+    aliases: [GCP, Google Cloud Platform]
+    parent_skill_id: cloud_computing
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: azure
+    preferred_label: Microsoft Azure
+    definition: Engineering with Microsoft Azure.
+    include_when: Azure is explicitly requested.
+    aliases: [Azure]
+    parent_skill_id: cloud_computing
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: cloud_architecture
+    preferred_label: Cloud architecture
+    definition: Designing cloud system boundaries and services.
+    include_when: Cloud architecture or cloud solution design is explicit.
+    parent_skill_id: cloud_computing
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: batch_hpc_cloud
+    preferred_label: Batch or HPC cloud
+    definition: Running batch or high-performance workloads in cloud environments.
+    include_when: Cloud batch computing or cloud HPC is explicit.
+    parent_skill_id: cloud_computing
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: cloud_cost_optimization
+    preferred_label: Cloud cost optimization
+    definition: Measuring or reducing cloud infrastructure cost.
+    include_when: Cloud cost, FinOps, or resource-cost optimization is explicit.
+    parent_skill_id: cloud_computing
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: identity_access_management
+    preferred_label: Identity and access management
+    definition: Managing cloud or platform identities, roles, and permissions.
+    include_when: IAM or identity/access engineering is explicit.
+    aliases: [IAM]
+    parent_skill_id: cloud_computing
+  - <<: *skill_defaults
+    category_id: containers_orchestration_cloud
+    skill_id: cloud_storage_compute
+    preferred_label: Cloud storage and compute
+    definition: Provisioning and using cloud storage or compute services.
+    include_when: Cloud storage or compute services are explicit.
+    parent_skill_id: cloud_computing
+
+  # 8.6 Workflow and scientific computing
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: workflow_orchestration
+    preferred_label: Workflow orchestration
+    definition: Defining and operating multi-step computational workflows.
+    include_when: Workflow orchestration or a named workflow engine is explicit.
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: nextflow
+    preferred_label: Nextflow
+    definition: Scientific workflow development with Nextflow.
+    include_when: Nextflow is explicitly requested.
+    parent_skill_id: workflow_orchestration
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: snakemake
+    preferred_label: Snakemake
+    definition: Scientific workflow development with Snakemake.
+    include_when: Snakemake is explicitly requested.
+    parent_skill_id: workflow_orchestration
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: wdl_cromwell
+    preferred_label: WDL or Cromwell
+    definition: Workflow definition or execution using WDL or Cromwell.
+    include_when: WDL or Cromwell is explicit.
+    aliases: [WDL, Cromwell]
+    parent_skill_id: workflow_orchestration
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: cwl
+    preferred_label: CWL
+    definition: Workflow development using Common Workflow Language.
+    include_when: CWL or Common Workflow Language is explicit.
+    aliases: [Common Workflow Language]
+    parent_skill_id: workflow_orchestration
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: airflow
+    preferred_label: Apache Airflow
+    definition: Workflow orchestration using Apache Airflow.
+    include_when: Airflow is explicitly requested.
+    aliases: [Apache Airflow]
+    parent_skill_id: workflow_orchestration
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: dagster
+    preferred_label: Dagster
+    definition: Workflow orchestration using Dagster.
+    include_when: Dagster is explicitly requested.
+    parent_skill_id: workflow_orchestration
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: prefect
+    preferred_label: Prefect
+    definition: Workflow orchestration using Prefect.
+    include_when: Prefect is explicitly requested.
+    parent_skill_id: workflow_orchestration
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: other_named_orchestrator
+    preferred_label: Other named orchestrator
+    definition: A named workflow orchestrator without a dedicated node.
+    include_when: Another workflow orchestrator is explicit; preserve its raw name.
+    parent_skill_id: workflow_orchestration
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: pipeline_design
+    preferred_label: Pipeline design
+    definition: Designing multi-stage computational or data pipelines.
+    include_when: Pipeline design or engineering is explicit.
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: workflow_portability
+    preferred_label: Workflow portability
+    definition: Making workflows portable across environments or platforms.
+    include_when: Workflow portability or cross-environment execution is explicit.
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: workflow_provenance
+    preferred_label: Workflow provenance
+    definition: Recording workflow inputs, steps, versions, and outputs.
+    include_when: Workflow provenance or lineage is explicit.
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: hpc
+    preferred_label: High-performance computing
+    definition: Engineering or operating high-performance computing workloads.
+    include_when: HPC or high-performance computing is explicit.
+    aliases: [HPC]
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: slurm
+    preferred_label: Slurm
+    definition: Scheduling computational workloads with Slurm.
+    include_when: Slurm is explicitly requested.
+    parent_skill_id: hpc
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: distributed_computing
+    preferred_label: Distributed computing
+    definition: Computing across multiple coordinated machines or workers.
+    include_when: Distributed computation is explicit.
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: gpu_computing
+    preferred_label: GPU computing
+    definition: Implementing or operating computation on GPUs.
+    include_when: GPU computation or acceleration is explicit.
+    aliases: [GPU acceleration]
+  - <<: *skill_defaults
+    category_id: workflow_scientific_computing
+    skill_id: numerical_scientific_computing
+    preferred_label: Numerical and scientific computing
+    definition: Implementing numerical or scientific computations in software.
+    include_when: Numerical or scientific computing is explicit.
+
+  # 8.7 Data engineering and platforms
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: relational_databases
+    preferred_label: Relational databases
+    definition: Designing, querying, or operating relational databases.
+    include_when: Relational databases or named relational systems are explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: nosql_databases
+    preferred_label: NoSQL databases
+    definition: Designing, querying, or operating non-relational databases.
+    include_when: NoSQL or a named non-relational database is explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: data_modeling
+    preferred_label: Data modeling
+    definition: Designing data structures, schemas, and relationships.
+    include_when: Data modeling or schema design is explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: etl_elt
+    preferred_label: ETL or ELT
+    definition: Extracting, transforming, and loading data between systems.
+    include_when: ETL, ELT, or equivalent data pipeline work is explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: data_lakes_warehouses
+    preferred_label: Data lakes and warehouses
+    definition: Designing or operating analytical data lakes or warehouses.
+    include_when: Data lakes, lakehouses, or warehouses are explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: spark
+    preferred_label: Apache Spark
+    definition: Distributed data processing with Apache Spark.
+    include_when: Spark is explicitly requested.
+    aliases: [Apache Spark]
+    is_tool: true
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: data_streaming
+    preferred_label: Data streaming
+    definition: Engineering real-time or event-stream data processing.
+    include_when: Streaming data systems or stream processing is explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: metadata_catalogs
+    preferred_label: Metadata and catalogs
+    definition: Managing technical metadata, catalogs, and discoverability.
+    include_when: Metadata systems or data catalogs are explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: data_quality
+    preferred_label: Data quality
+    definition: Measuring, validating, and improving data correctness.
+    include_when: Data-quality controls or validation are explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: scalable_storage
+    preferred_label: Scalable storage
+    definition: Designing storage systems for large or growing data volumes.
+    include_when: Scalable or distributed storage engineering is explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: vector_databases
+    preferred_label: Vector databases
+    definition: Storing and querying vector embeddings in specialized databases.
+    include_when: Vector databases or vector stores are explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: search_indexing
+    preferred_label: Search and indexing
+    definition: Building or operating search and indexing systems.
+    include_when: Search-engine or indexing engineering is explicit.
+  - <<: *skill_defaults
+    category_id: data_engineering_platforms
+    skill_id: data_governance
+    preferred_label: Data governance
+    definition: Managing data ownership, policy, quality, access, and lifecycle.
+    include_when: Technical data-governance responsibilities are explicit.
+
+  # 8.8 Architecture and product engineering
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: system_design
+    preferred_label: System design
+    definition: Designing system components, boundaries, interfaces, and tradeoffs.
+    include_when: System design or software architecture work is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: distributed_systems
+    preferred_label: Distributed systems
+    definition: Designing systems whose components coordinate across machines.
+    include_when: Distributed-system design or implementation is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: microservices
+    preferred_label: Microservices
+    definition: Designing or operating a microservice architecture.
+    include_when: Microservices are explicitly requested.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: event_driven_systems
+    preferred_label: Event-driven systems
+    definition: Designing systems around events, messages, or asynchronous processing.
+    include_when: Event-driven architecture is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: web_applications
+    preferred_label: Web applications
+    definition: Building browser-accessible software applications.
+    include_when: Web application development is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: frontend_ui
+    preferred_label: Frontend and UI engineering
+    definition: Building user interfaces and client-side applications.
+    include_when: Frontend or UI engineering is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: backend_services
+    preferred_label: Backend services
+    definition: Building server-side application services.
+    include_when: Backend service engineering is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: api_design
+    preferred_label: API design
+    definition: Designing API contracts, behavior, and compatibility.
+    include_when: API architecture or contract design is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: platform_engineering
+    preferred_label: Platform engineering
+    definition: Building internal or external platforms used by other teams.
+    include_when: Platform engineering is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: multi_tenant_systems
+    preferred_label: Multi-tenant systems
+    definition: Designing systems that isolate and serve multiple tenants.
+    include_when: Multi-tenant architecture is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: usability_user_centered_development
+    preferred_label: Usability and user-centered development
+    definition: Designing and evaluating software around user needs.
+    include_when: Usability, UX engineering, or user-centered development is explicit.
+  - <<: *skill_defaults
+    category_id: architecture_product_engineering
+    skill_id: requirements_translation
+    preferred_label: Requirements translation
+    definition: Translating scientific or product needs into engineering requirements.
+    include_when: Translating stakeholder needs into technical requirements is explicit.
+
+  # 8.9 Security, privacy, and regulated engineering
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: secure_coding
+    preferred_label: Secure coding
+    definition: Implementing software to prevent security vulnerabilities.
+    include_when: Secure coding or application security is explicit.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: threat_risk_management
+    preferred_label: Threat and risk management
+    definition: Identifying and managing technical threats and security risks.
+    include_when: Threat modeling or security risk management is explicit.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: secrets_management
+    preferred_label: Secrets management
+    definition: Protecting and rotating credentials, keys, and tokens.
+    include_when: Secrets or credential management is explicit.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: access_control
+    preferred_label: Access control
+    definition: Designing and enforcing authorization boundaries.
+    include_when: Access-control or authorization engineering is explicit.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: privacy_engineering
+    preferred_label: Privacy engineering
+    definition: Implementing controls that protect personal or sensitive data.
+    include_when: Technical privacy controls or privacy engineering is explicit.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: hipaa
+    preferred_label: HIPAA engineering controls
+    definition: Technical or process engineering under HIPAA requirements.
+    include_when: HIPAA is tied to software, data, security, or lifecycle responsibilities.
+    exclude_when: Do not count a generic regulated-industry mention without a role expectation.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: gxp
+    preferred_label: GxP engineering controls
+    definition: Engineering under Good Practice quality requirements.
+    include_when: GxP is tied to technical systems, validation, or lifecycle controls.
+    aliases: [GxP]
+    exclude_when: Do not count a generic compliance statement without a technical expectation.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: fda_clinical_validation
+    preferred_label: FDA or clinical validation
+    definition: Software or analytical validation for FDA-regulated or clinical use.
+    include_when: FDA or clinical validation is tied to technical role responsibilities.
+    exclude_when: Do not infer validation work from the employer's sector alone.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: audit_trails
+    preferred_label: Audit trails
+    definition: Recording immutable or reviewable histories of system actions and changes.
+    include_when: Technical audit trails are explicit.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: compliance_engineering
+    preferred_label: Compliance engineering
+    definition: Implementing and evidencing controls for applicable requirements.
+    include_when: Compliance is tied to technical design, operation, or validation.
+  - <<: *skill_defaults
+    category_id: security_privacy_regulated_engineering
+    skill_id: software_lifecycle_controls
+    preferred_label: Software lifecycle controls
+    definition: Controlled software change, validation, approval, and retirement practices.
+    include_when: SDLC controls, change control, or validated lifecycle practices are explicit.
+
+  # 8.10 Documentation and engineering process
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: technical_documentation
+    preferred_label: Technical documentation
+    definition: Creating and maintaining documentation for software and systems.
+    include_when: Technical documentation is explicit.
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: architecture_design_documents
+    preferred_label: Architecture and design documents
+    definition: Recording system designs, decisions, and interfaces.
+    include_when: Architecture or technical design documents are explicit.
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: sops
+    preferred_label: Standard operating procedures
+    definition: Creating or maintaining controlled standard operating procedures.
+    include_when: SOP authorship or maintenance is explicit.
+    aliases: [SOPs]
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: agile_methods
+    preferred_label: Agile, Scrum, or Kanban
+    definition: Working within explicit iterative software-delivery methods.
+    include_when: Agile, Scrum, or Kanban engineering practice is explicit.
+    aliases: [Agile, Scrum, Kanban]
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: estimation_planning
+    preferred_label: Estimation and planning
+    definition: Estimating and planning engineering work.
+    include_when: Technical estimation or delivery planning is explicit.
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: mentorship
+    preferred_label: Mentorship
+    definition: Developing other engineers through guidance and feedback.
+    include_when: Mentoring engineers or scientists in engineering practice is explicit.
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: stakeholder_communication
+    preferred_label: Stakeholder communication
+    definition: Communicating technical work and tradeoffs to stakeholders.
+    include_when: Technical stakeholder communication is explicit.
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: cross_functional_work
+    preferred_label: Cross-functional work
+    definition: Delivering engineering work across scientific, product, and operational functions.
+    include_when: Cross-functional engineering collaboration is explicit.
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: product_ownership
+    preferred_label: Product ownership
+    definition: Owning technical product priorities, outcomes, or lifecycle.
+    include_when: Product ownership is explicit in a hands-on technical role.
+  - <<: *skill_defaults
+    category_id: documentation_engineering_process
+    skill_id: technical_leadership
+    preferred_label: Technical leadership
+    definition: Leading technical direction, standards, and engineering decisions.
+    include_when: Hands-on technical leadership is explicit.
+
+  # 8.11 Bioinformatics engineering context; these do not inflate engineering prevalence.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: ngs_genomics_pipelines
+    preferred_label: NGS and genomics pipelines
+    definition: Computational context involving next-generation sequencing or genomics pipelines.
+    include_when: NGS or genomics pipeline work is explicit.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: single_cell
+    preferred_label: Single-cell analysis
+    definition: Computational work with single-cell biological data.
+    include_when: Single-cell analysis or data is explicit.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: spatial_omics
+    preferred_label: Spatial omics
+    definition: Computational work with spatially resolved omics data.
+    include_when: Spatial omics is explicit.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: proteomics
+    preferred_label: Proteomics
+    definition: Computational work with protein abundance or proteomic data.
+    include_when: Proteomics is explicit.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: transcriptomics
+    preferred_label: Transcriptomics
+    definition: Computational work with transcript or gene-expression data.
+    include_when: Transcriptomics or RNA-seq analysis is explicit.
+    aliases: [RNA-seq]
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: variant_calling
+    preferred_label: Variant calling
+    definition: Detecting and characterizing genomic variants.
+    include_when: Variant calling or variant analysis is explicit.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: sequence_analysis
+    preferred_label: Sequence analysis
+    definition: Computational analysis of biological sequences.
+    include_when: Biological sequence analysis is explicit.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: biological_imaging
+    preferred_label: Biological imaging
+    definition: Computational work with microscopy or other biological images.
+    include_when: Biological or biomedical image analysis is explicit.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: clinical_bioinformatics
+    preferred_label: Clinical bioinformatics
+    definition: Bioinformatics supporting clinical interpretation or diagnostics.
+    include_when: Clinical bioinformatics is explicit.
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: laboratory_information_systems
+    preferred_label: Laboratory information systems
+    definition: Software and data systems supporting laboratory operations.
+    include_when: LIMS or laboratory information systems are explicit.
+    aliases: [LIMS]
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: fair_data
+    preferred_label: FAIR data
+    definition: Data practices supporting findability, accessibility, interoperability, and reuse.
+    include_when: FAIR data principles are explicit.
+    aliases: [FAIR principles]
+  - <<: *skill_defaults
+    category_id: bioinformatics_engineering_context
+    skill_id: bioinformatics_formats_standards
+    preferred_label: Bioinformatics formats and standards
+    definition: Domain file formats, identifiers, ontologies, or interoperability standards.
+    include_when: Bioinformatics formats or standards are explicit.
+
+  # 8.12 AI-related taxonomy
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_assisted_software_development
+    preferred_label: AI-assisted software development
+    definition: Routine use of AI systems to produce, review, test, or document software.
+    include_when: AI coding assistance or a named AI development tool is explicit.
+    exclude_when: Do not infer from generic automation, algorithms, or AI product content.
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_coding_tools
+    preferred_label: AI coding tools
+    definition: Named AI tools used for software development.
+    include_when: Copilot, Cursor, a coding agent, or another AI coding tool is explicit.
+    aliases: [GitHub Copilot, Copilot, Cursor, coding agents]
+    parent_skill_id: ai_assisted_software_development
+    is_tool: true
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_code_review
+    preferred_label: AI code review
+    definition: Using AI to review or analyze software changes.
+    include_when: AI-based code review is explicit.
+    parent_skill_id: ai_assisted_software_development
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_supported_testing_documentation
+    preferred_label: AI-supported testing or documentation
+    definition: Using AI to generate or improve software tests or documentation.
+    include_when: AI-supported testing or documentation is explicit.
+    parent_skill_id: ai_assisted_software_development
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ml_engineering
+    preferred_label: Machine-learning engineering
+    definition: Engineering systems that train, evaluate, deploy, or operate ML models.
+    include_when: ML engineering is explicit beyond statistical analysis alone.
+    aliases: [machine learning engineering]
+    exclude_when: Do not infer from statistical modeling or conventional bioinformatics alone.
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ml_training_inference_pipelines
+    preferred_label: ML training and inference pipelines
+    definition: Building pipelines for model training or inference.
+    include_when: Model-training or inference pipeline engineering is explicit.
+    parent_skill_id: ml_engineering
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: feature_engineering
+    preferred_label: Feature engineering
+    definition: Constructing model input features for ML systems.
+    include_when: Feature engineering for ML is explicit.
+    parent_skill_id: ml_engineering
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: model_serving
+    preferred_label: Model serving
+    definition: Deploying models behind production inference interfaces.
+    include_when: Model serving or production inference deployment is explicit.
+    parent_skill_id: ml_engineering
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: mlops
+    preferred_label: MLOps
+    definition: Operational practices for ML lifecycle and production systems.
+    include_when: MLOps is explicitly requested.
+    parent_skill_id: ml_engineering
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: experiment_tracking
+    preferred_label: ML experiment tracking
+    definition: Recording ML experiments, parameters, artifacts, and outcomes.
+    include_when: Experiment tracking for models is explicit.
+    parent_skill_id: ml_engineering
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: model_monitoring
+    preferred_label: Model monitoring
+    definition: Monitoring deployed model quality, drift, and behavior.
+    include_when: ML model monitoring or drift detection is explicit.
+    parent_skill_id: ml_engineering
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: deep_learning_frameworks
+    preferred_label: Deep-learning frameworks
+    definition: Implementing deep-learning systems with named frameworks.
+    include_when: PyTorch, TensorFlow, JAX, or another deep-learning framework is explicit.
+    aliases: [PyTorch, TensorFlow, JAX]
+    is_tool: true
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: generative_ai_llms
+    preferred_label: Generative AI and LLMs
+    definition: Engineering with generative or large language models.
+    include_when: Generative AI, LLMs, or foundation models are explicit.
+    aliases: [generative AI, LLMs, large language models]
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: prompting
+    preferred_label: Prompting
+    definition: Designing and evaluating instructions or prompts for generative models.
+    include_when: Prompt engineering or systematic prompting is explicit.
+    parent_skill_id: generative_ai_llms
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: retrieval_augmented_generation
+    preferred_label: Retrieval-augmented generation
+    definition: Grounding generative models with retrieved external context.
+    include_when: RAG or retrieval-augmented generation is explicit.
+    aliases: [RAG]
+    parent_skill_id: generative_ai_llms
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: model_fine_tuning
+    preferred_label: Model fine-tuning
+    definition: Adapting pretrained models through additional training.
+    include_when: Fine-tuning a generative or foundation model is explicit.
+    parent_skill_id: generative_ai_llms
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: embeddings
+    preferred_label: Embeddings
+    definition: Generating or using learned vector representations.
+    include_when: Embeddings are explicit in an ML or generative-AI context.
+    parent_skill_id: generative_ai_llms
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: foundation_models
+    preferred_label: Foundation models
+    definition: Engineering with broadly pretrained models adapted across tasks.
+    include_when: Foundation models are explicitly requested.
+    parent_skill_id: generative_ai_llms
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: multimodal_models
+    preferred_label: Multimodal models
+    definition: Models that process or generate multiple data modalities.
+    include_when: Multimodal model engineering is explicit.
+    parent_skill_id: generative_ai_llms
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_agents_orchestration
+    preferred_label: AI agents and orchestration
+    definition: Tool-using, multi-step AI agents and their orchestration.
+    include_when: Agents, tool use, multi-step planning, or agent frameworks are explicit.
+    exclude_when: Do not classify generic workflow orchestration as AI agents.
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: human_in_the_loop_ai
+    preferred_label: Human-in-the-loop AI systems
+    definition: AI workflows with explicit human review, approval, or intervention.
+    include_when: Human-in-the-loop AI system design is explicit.
+    parent_skill_id: ai_agents_orchestration
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_evaluation_safety
+    preferred_label: AI evaluation and safety
+    definition: Evaluating and controlling AI model quality, risk, and failure.
+    include_when: AI evaluation, safety, guardrails, red teaming, or governance is explicit.
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_benchmarks_error_analysis
+    preferred_label: AI benchmarks and error analysis
+    definition: Measuring AI performance and analyzing hallucinations or errors.
+    include_when: AI benchmarks, evaluations, hallucination analysis, or error analysis is explicit.
+    parent_skill_id: ai_evaluation_safety
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_guardrails_red_teaming
+    preferred_label: AI guardrails and red teaming
+    definition: Testing and constraining AI systems against harmful or invalid behavior.
+    include_when: AI guardrails or red teaming is explicit.
+    parent_skill_id: ai_evaluation_safety
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: responsible_ai_governance
+    preferred_label: Responsible AI and model governance
+    definition: Governing AI privacy, security, accountability, and responsible use.
+    include_when: Responsible AI or model governance is explicit.
+    parent_skill_id: ai_evaluation_safety
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_scientific_application
+    preferred_label: AI for scientific work
+    definition: Applying AI models or agents to biological or scientific work.
+    include_when: AI is explicitly applied to protein, sequence, drug, lab, or analysis tasks.
+    exclude_when: Conventional bioinformatics without explicit AI content is not included.
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: biological_foundation_models
+    preferred_label: Biological foundation models
+    definition: Foundation models trained for biological sequences, structures, or other scientific data.
+    include_when: Biological, protein, sequence, or genomic foundation models are explicit.
+    parent_skill_id: ai_scientific_application
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ai_drug_discovery_models
+    preferred_label: AI drug-discovery models
+    definition: AI models used in drug discovery or molecular design.
+    include_when: AI or ML drug-discovery modeling is explicit.
+    parent_skill_id: ai_scientific_application
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: scientific_agents
+    preferred_label: Scientific agents
+    definition: AI agents that plan or execute laboratory, analytical, or scientific workflows.
+    include_when: Lab, analysis, or scientific agents are explicit.
+    parent_skill_id: ai_scientific_application
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: ai_engineering
+    skill_id: ambiguous_ai
+    preferred_label: Ambiguous AI
+    definition: A nonspecific explicit AI requirement without enough detail for a narrower node.
+    include_when: The posting explicitly says AI experience but supplies no specific capability.
+    exclude_when: Do not use for automation, algorithms, statistics, or conventional bioinformatics without explicit AI wording.
+    is_ai_related: true
+
+  # 8.13 Durable AI-era engineering competencies
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: specification_intent_engineering
+    preferred_label: Specification and intent engineering
+    definition: Translating scientific goals into testable requirements, constraints, interfaces, acceptance tests, and executable plans.
+    include_when: Explicit work specifies intent, constraints, acceptance criteria, or machine-executable plans.
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: codebase_system_comprehension
+    preferred_label: Codebase and system comprehension
+    definition: Navigating repositories, tracing dependencies, reconstructing architecture, reading generated code, and assessing impact.
+    include_when: Code reading, repository comprehension, debugging, architecture reconstruction, or impact analysis is explicit.
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: context_engineering
+    preferred_label: Context engineering
+    definition: Selecting and governing authoritative, fresh, permission-appropriate context for agents.
+    include_when: Explicit work curates repository, data, protocol, issue, or domain context for AI systems.
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: agent_orchestration
+    preferred_label: Agent orchestration
+    definition: Decomposing, delegating, permissioning, checkpointing, and recovering multi-step agent work.
+    include_when: Explicit work directs AI agents, tools, checkpoints, escalation, coordination, or recovery.
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: verification_validation
+    preferred_label: Verification and validation
+    definition: Designing independent tests, oracles, invariants, benchmarks, scientific validation, and adversarial review.
+    include_when: Independent verification or multi-layer validation is explicit.
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: reproducibility_provenance
+    preferred_label: Reproducibility and provenance
+    definition: Preserving inputs, environments, lineage, deterministic reruns, and traceable signed artifacts.
+    include_when: Reproducibility, lineage, provenance, or deterministic regeneration is explicit.
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: scientific_uncertainty_correctness
+    preferred_label: Correctness under scientific uncertainty
+    definition: Separating software behavior from analytical and biological validity while checking assumptions and confounding.
+    include_when: Explicit work validates scientific assumptions, leakage, calibration, units, reference builds, statistics, or domain plausibility.
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: ai_generated_code_governance
+    preferred_label: AI-generated-code governance
+    definition: Governing authorship, approval, audit, licensing, vendor change, incidents, and accountability for AI-produced code.
+    include_when: Explicit controls govern AI-generated software or model-assisted changes.
+    is_ai_related: true
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: security_containment
+    preferred_label: Security and containment
+    definition: Applying least privilege, sandboxing, secret protection, injection defenses, supply-chain controls, and safe rollback.
+    include_when: Explicit work secures or contains AI agents or untrusted automated tooling.
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: maintenance_stewardship
+    preferred_label: Maintenance and stewardship
+    definition: Diagnosing generated systems, limiting drift and sprawl, keeping documentation current, and preserving operability.
+    include_when: Long-term stewardship, architectural drift control, deprecation, migration, or generated-system maintenance is explicit.
+  - <<: *skill_defaults
+    category_id: durable_ai_era_engineering
+    skill_id: human_factors_organizational_design
+    preferred_label: Human factors and organizational design
+    definition: Managing reviewer workload, automation bias, skill atrophy, training, escalation, duties, and responsibility.
+    include_when: Human factors or organizational controls for AI-enabled engineering are explicit.

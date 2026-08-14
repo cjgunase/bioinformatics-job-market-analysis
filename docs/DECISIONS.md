@@ -57,3 +57,17 @@ Tests make codebook/schema drift a failure. Cross-record foreign keys and
 ordered comparisons remain pipeline checks because they are not reliably
 expressible in portable JSON Schema. Taxonomy identifiers remain nullable until
 M05 establishes taxonomy 1.0.0; M04 does not assign or change taxonomy meaning.
+
+## D008 — 2026-08-14 — Initial taxonomy baseline
+
+Taxonomy 1.0.0 encodes specification 1.1.1 sections 8.1–8.13 as 187 stable
+skill nodes in 13 top-level categories. Each skill carries explicit inclusion
+and exclusion guidance, aliases, within-category parent links, tool and
+AI-related flags, and lifecycle metadata. Bioinformatics context stays separate
+from software-engineering prevalence, and explicit AI evidence stays separate
+from generic automation, algorithms, statistics, and conventional
+bioinformatics. Run and requirement contracts now require taxonomy 1.0.0 and
+non-null taxonomy identifiers. The implementation baseline remains pending
+initial human review and does not authorize canonical market findings; future
+taxonomy changes follow the append-only semantic-versioning, review, migration,
+and backcast rules in `taxonomy/CHANGELOG.md`.
