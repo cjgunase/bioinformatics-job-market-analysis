@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cjgunase.github.io/bioinformatics-job-market-analysis/schemas/employers.schema.json",
+  "title": "Employer board registry row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "employer_id", "company_name_normalized", "company_domain", "sector",
+    "company_size_proxy", "ats_system", "board_identifier", "public_board_url",
+    "api_base_url", "api_documentation_url", "authentication_expected",
+    "terms_checked_at", "robots_checked_at", "last_success_at",
+    "last_http_status", "parser_version", "active", "discovery_source", "notes"
+  ],
+  "properties": {
+    "employer_id": {"type": "string", "pattern": "^emp_[a-z0-9_]+$"},
+    "company_name_normalized": {"type": "string", "minLength": 1},
+    "company_domain": {"type": "string", "format": "hostname"},
+    "sector": {"type": "string", "enum": ["biopharma", "biotechnology_tools", "diagnostics_clinical_labs", "genomics_sequencing", "health_tech", "ai_enabled_drug_discovery", "contract_research_services", "scientific_software_platform", "other_life_science"]},
+    "company_size_proxy": {"type": ["string", "null"]},
+    "ats_system": {"type": "string", "enum": ["greenhouse", "lever", "ashby", "other"]},
+    "board_identifier": {"type": "string", "minLength": 1},
+    "public_board_url": {"type": "string", "format": "uri"},
+    "api_base_url": {"type": "string", "format": "uri"},
+    "api_documentation_url": {"type": "string", "format": "uri"},
+    "authentication_expected": {"type": "boolean"},
+    "terms_checked_at": {"type": ["string", "null"], "format": "date-time"},
+    "robots_checked_at": {"type": ["string", "null"], "format": "date-time"},
+    "last_success_at": {"type": ["string", "null"], "format": "date-time"},
+    "last_http_status": {"type": ["integer", "null"], "minimum": 100, "maximum": 599},
+    "parser_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "active": {"type": "boolean"},
+    "discovery_source": {"type": "string", "minLength": 1},
+    "notes": {"type": ["string", "null"]}
+  }
+}

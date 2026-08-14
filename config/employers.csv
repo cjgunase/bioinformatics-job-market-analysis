@@ -1,0 +1,1 @@
+employer_id,company_name_normalized,company_domain,sector,company_size_proxy,ats_system,board_identifier,public_board_url,api_base_url,api_documentation_url,authentication_expected,terms_checked_at,robots_checked_at,last_success_at,last_http_status,parser_version,active,discovery_source,notes

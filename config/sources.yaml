@@ -1,0 +1,27 @@
+source_contract_version: 1.0.0
+adapters:
+  greenhouse:
+    api_base_url: https://boards-api.greenhouse.io/v1/boards
+    documentation_url: https://developer.greenhouse.io/job-board.html
+    authentication_expected: false
+    read_only: true
+  lever:
+    api_base_url: https://api.lever.co/v0/postings
+    documentation_url: https://github.com/lever/postings-api
+    authentication_expected: false
+    read_only: true
+  ashby:
+    api_base_url: https://api.ashbyhq.com/posting-api/job-board
+    documentation_url: https://developers.ashbyhq.com/docs/public-job-posting-api
+    authentication_expected: false
+    read_only: true
+policy:
+  user_agent: BSE-JMA-001-research/0.1 (+https://github.com/cjgunase/bioinformatics-job-market-analysis)
+  domain_concurrency: 1
+  requests_per_second: 0.5
+  timeout_seconds: 30
+  max_attempts: 3
+  retry_statuses: [429, 500, 502, 503, 504]
+  stop_statuses: [401, 403]
+  cache_ttl_seconds: 86400
+  application_or_admin_endpoints_prohibited: true
