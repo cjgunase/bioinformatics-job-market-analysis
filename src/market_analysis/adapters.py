@@ -84,3 +84,43 @@ def parse_greenhouse(payload: bytes) -> list[Posting]:
             )
         )
     return postings
+
+
+def parse_lever(payload: bytes) -> list[Posting]:
+    try:
+        records = json.loads(payload)
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ContractError("malformed JSON response") from error
+    if not isinstance(records, list):
+        raise ContractError("Lever response must be an array")
+    postings: list[Posting] = []
+    for raw in records:
+        if not isinstance(raw, dict):
+            raise ContractError("Lever posting is not an object")
+        categories = raw.get("categories")
+        if not isinstance(categories, dict):
+            raise ContractError("Lever posting missing categories")
+        raw_locations = categories.get("allLocations")
+        if isinstance(raw_locations, list) and raw_locations:
+            locations = tuple(str(item).strip() for item in raw_locations if str(item))
+        else:
+            locations = (_text(categories, "location"),)
+        description = raw.get("descriptionPlain") or raw.get("description")
+        if not isinstance(description, str) or not description.strip():
+            raise ContractError("missing required string: description")
+        salary = raw.get("salaryRange")
+        compensation = (
+            json.dumps(salary, sort_keys=True) if salary is not None else None
+        )
+        postings.append(
+            Posting(
+                source="lever",
+                posting_id=_text(raw, "id"),
+                title=_text(raw, "text"),
+                description_text=html_to_text(description),
+                locations=locations,
+                canonical_url=_text(raw, "hostedUrl"),
+                compensation=compensation,
+            )
+        )
+    return postings
