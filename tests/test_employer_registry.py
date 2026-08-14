@@ -66,3 +66,15 @@ def test_committed_registry_rows_validate_and_are_observed_not_guessed() -> None
             schema, format_checker=jsonschema.FormatChecker()
         ).validate(row)
         assert "public first-party ATS" in str(row["discovery_source"])
+
+
+def test_registry_audit_counts_match_registry() -> None:
+    with (ROOT / "config/employers.csv").open(newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    audit = json.loads(
+        (ROOT / "reports/2026-08/employer_registry_audit.json").read_text()
+    )
+    assert audit["registry_rows"] == len(rows) == 15
+    assert audit["active_rows"] == sum(row["active"] == "true" for row in rows)
+    assert audit["represented_sector_groups"] == len({row["sector"] for row in rows})
+    assert audit["governance"]["identifiers_guessed"] == 0
