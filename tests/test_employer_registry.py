@@ -74,7 +74,25 @@ def test_registry_audit_counts_match_registry() -> None:
     audit = json.loads(
         (ROOT / "reports/2026-08/employer_registry_audit.json").read_text()
     )
-    assert audit["registry_rows"] == len(rows) == 15
-    assert audit["active_rows"] == sum(row["active"] == "true" for row in rows)
-    assert audit["represented_sector_groups"] == len({row["sector"] for row in rows})
+    assert audit["registry_rows"] == 15
+    assert len(rows) >= audit["registry_rows"]
+    assert sum(row["active"] == "true" for row in rows) >= audit["active_rows"]
+    assert len({row["sector"] for row in rows}) >= audit["represented_sector_groups"]
     assert audit["governance"]["identifiers_guessed"] == 0
+
+
+def test_discovery_readiness_is_a_qualified_capacity_check() -> None:
+    with (ROOT / "config/employers.csv").open(newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    readiness = json.loads(
+        (ROOT / "reports/2026-08/discovery_readiness.json").read_text()
+    )
+    assert readiness["registry_rows"] == len(rows)
+    assert readiness["active_rows"] == sum(row["active"] == "true" for row in rows)
+    assert readiness["metadata_only_discovery_events"] >= 220
+    assert (
+        readiness["maximum_distinct_postings_under_company_cap_before_other_filters"]
+        >= 170
+    )
+    assert "upper bound" in readiness["qualification"]
+    assert readiness["governance"]["source_access_controls_bypassed"] is False

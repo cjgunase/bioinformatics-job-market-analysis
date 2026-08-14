@@ -1,0 +1,33 @@
+{
+  "assessed_at": "2026-08-14T05:05:16Z",
+  "registry_rows": 38,
+  "active_rows": 36,
+  "inactive_rows": 2,
+  "represented_sector_groups": 8,
+  "active_sector_counts": {
+    "ai_enabled_drug_discovery": 9,
+    "biopharma": 9,
+    "biotechnology_tools": 5,
+    "contract_research_services": 2,
+    "diagnostics_clinical_labs": 4,
+    "genomics_sequencing": 2,
+    "health_tech": 2,
+    "scientific_software_platform": 3
+  },
+  "metadata_only_discovery_events": 918,
+  "employers_with_discovery_events": 36,
+  "maximum_distinct_postings_under_company_cap_before_other_filters": 173,
+  "target_sample": 150,
+  "target_reserve": 20,
+  "screening_pool_minimum": 220,
+  "screening_log_sha256": "154d1d027c1a76c7fabf7dbf58c32bff8cecb29dc401e3bc08dfd2a5eab80b58",
+  "readiness": "ready_for_deterministic_screening",
+  "qualification": "The 173-posting cap capacity is only a pre-screen upper bound. Eligibility, source availability, exact and near deduplication, strata, and all diversity controls may reduce it; M36 must fail closed and M37 must publish an insufficiency report if fewer than 150 eligible postings remain.",
+  "governance": {
+    "identifiers_guessed": 0,
+    "bulk_identifier_enumeration_used": false,
+    "application_endpoints_called": false,
+    "raw_job_text_committed": false,
+    "source_access_controls_bypassed": false
+  }
+}

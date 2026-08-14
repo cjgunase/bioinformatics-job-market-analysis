@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import json
 from pathlib import Path
 
 from market_analysis.adapters import parse_ashby, parse_greenhouse, parse_lever
@@ -22,8 +23,10 @@ def build_discovery_increment(
     *,
     run_id: str,
     retrieved_at: str,
+    append: bool = False,
+    employer_ids: set[str] | None = None,
 ) -> int:
-    if output_path.exists():
+    if output_path.exists() and not append:
         raise ValueError(
             "screening discovery log is append-only; output already exists"
         )
@@ -33,10 +36,19 @@ def build_discovery_increment(
         "ashby": parse_ashby,
     }
     seen_urls: set[str] = set()
+    if output_path.exists():
+        seen_urls = {
+            str(json.loads(line)["canonical_candidate_url"])
+            for line in output_path.read_text().splitlines()
+            if line
+        }
+    appended = 0
     with registry_path.open(newline="") as handle:
         rows = list(csv.DictReader(handle))
     for row in rows:
-        if row["active"] != "true":
+        if row["active"] != "true" or (
+            employer_ids is not None and row["employer_id"] not in employer_ids
+        ):
             continue
         system = row["ats_system"]
         path = _response_path(response_dir, system, row["board_identifier"])
@@ -65,4 +77,6 @@ def build_discovery_increment(
                     source_response_sha256=response_hash,
                 ),
             )
-    return validate_discovery_log(output_path)
+            appended += 1
+    validate_discovery_log(output_path)
+    return appended

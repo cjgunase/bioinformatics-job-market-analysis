@@ -65,3 +65,14 @@ def test_live_discovery_exports_metadata_only_hash_chained_events(
             run_id="run",
             retrieved_at="2026-08-14T04:53:03Z",
         )
+    assert (
+        build_discovery_increment(
+            registry,
+            tmp_path,
+            output,
+            run_id="run",
+            retrieved_at="2026-08-14T04:53:03Z",
+            append=True,
+        )
+        == 0
+    )
