@@ -41,3 +41,28 @@ def test_registry_schema_accepts_a_valid_board_and_rejects_extras() -> None:
     jsonschema.Draft202012Validator(schema).validate(row)
     row["unexpected"] = True
     assert list(jsonschema.Draft202012Validator(schema).iter_errors(row))
+
+
+def test_committed_registry_rows_validate_and_are_observed_not_guessed() -> None:
+    schema = json.loads((ROOT / "schemas/employers.schema.json").read_text())
+    with (ROOT / "config/employers.csv").open(newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    assert len(rows) >= 8
+    for raw in rows:
+        row: dict[str, object] = dict(raw)
+        for field in (
+            "company_size_proxy",
+            "last_success_at",
+            "last_http_status",
+            "notes",
+        ):
+            if row[field] == "":
+                row[field] = None
+        for field in ("authentication_expected", "active"):
+            row[field] = row[field] == "true"
+        if row["last_http_status"] is not None:
+            row["last_http_status"] = int(str(row["last_http_status"]))
+        jsonschema.Draft202012Validator(
+            schema, format_checker=jsonschema.FormatChecker()
+        ).validate(row)
+        assert "public first-party ATS" in str(row["discovery_source"])
