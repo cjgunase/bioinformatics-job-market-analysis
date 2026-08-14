@@ -103,11 +103,15 @@ def parse_lever(payload: bytes) -> list[Posting]:
         raw_locations = categories.get("allLocations")
         if isinstance(raw_locations, list) and raw_locations:
             locations = tuple(str(item).strip() for item in raw_locations if str(item))
+        elif not categories.get("location"):
+            locations = ()
         else:
             locations = (_text(categories, "location"),)
         description = raw.get("descriptionPlain") or raw.get("description")
-        if not isinstance(description, str) or not description.strip():
-            raise ContractError("missing required string: description")
+        if description is None:
+            description = ""
+        if not isinstance(description, str):
+            raise ContractError("Lever description has invalid type")
         salary = raw.get("salaryRange")
         compensation = (
             json.dumps(salary, sort_keys=True) if salary is not None else None

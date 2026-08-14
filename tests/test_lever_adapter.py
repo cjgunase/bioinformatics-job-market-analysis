@@ -46,3 +46,12 @@ def test_lever_rejects_malformed_contracts(broken: bytes) -> None:
 
 def test_lever_empty_array_represents_no_published_jobs() -> None:
     assert parse_lever(b"[]") == []
+
+
+def test_lever_preserves_missing_optional_location_without_invention() -> None:
+    body = payload(categories={"team": "Research", "allLocations": []})
+    assert parse_lever(body)[0].locations == ()
+
+
+def test_lever_preserves_empty_optional_description_for_screening() -> None:
+    assert parse_lever(payload(description=""))[0].description_text == ""
