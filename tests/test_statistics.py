@@ -3,7 +3,9 @@ import pytest
 from market_analysis.analyze import (
     Assertion,
     benjamini_hochberg,
+    clustering_distance_inputs,
     compare_groups,
+    cooccurrence_pairs,
     prevalence,
     wilson_interval,
 )
@@ -58,3 +60,26 @@ def test_benjamini_hochberg_is_monotone_in_p_order() -> None:
     assert all(row.q_value is not None for row in ordered)
     q_values = [row.q_value or 0.0 for row in ordered]
     assert q_values == sorted(q_values)
+
+
+def test_cooccurrence_metrics_support_gate_and_clustering_inputs() -> None:
+    matrix = {
+        f"j{index}": (
+            {"python", "docker", "nextflow"} if index < 5 else {"python", "sql"}
+        )
+        for index in range(10)
+    }
+    pairs = cooccurrence_pairs(matrix)
+    assert [(row.skill_a, row.skill_b) for row in pairs] == [
+        ("docker", "nextflow"),
+        ("docker", "python"),
+        ("nextflow", "python"),
+        ("python", "sql"),
+    ]
+    docker_nextflow = pairs[0]
+    assert docker_nextflow.support == 5
+    assert docker_nextflow.jaccard == 1.0
+    distances = clustering_distance_inputs(pairs, ["docker", "nextflow", "sql"])
+    assert distances[0][0] == 0
+    assert distances[0][1] == 0
+    assert distances[0][2] == 1

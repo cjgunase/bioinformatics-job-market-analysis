@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import math
-from collections import defaultdict
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 
 
@@ -37,6 +37,17 @@ class Comparison:
     test: str
     p_value: float
     q_value: float | None = None
+
+
+@dataclass(frozen=True)
+class Cooccurrence:
+    skill_a: str
+    skill_b: str
+    support: int
+    joint_prevalence: float
+    jaccard: float
+    lift: float
+    phi: float
 
 
 def wilson_interval(
@@ -177,4 +188,61 @@ def benjamini_hochberg(comparisons: list[Comparison]) -> list[Comparison]:
     return [
         Comparison(**{**row.__dict__, "q_value": adjusted[index]})
         for index, row in enumerate(comparisons)
+    ]
+
+
+def cooccurrence_pairs(
+    matrix: dict[str, set[str]],
+    *,
+    min_skill_support: int = 5,
+    min_pair_support: int = 5,
+) -> list[Cooccurrence]:
+    total = len(matrix)
+    if total == 0:
+        return []
+    support = Counter(skill for skills in matrix.values() for skill in skills)
+    skills = sorted(
+        skill for skill, count in support.items() if count >= min_skill_support
+    )
+    results = []
+    for left_index, left in enumerate(skills):
+        for right in skills[left_index + 1 :]:
+            joint = sum(left in row and right in row for row in matrix.values())
+            if joint < min_pair_support:
+                continue
+            left_n, right_n = support[left], support[right]
+            union = left_n + right_n - joint
+            p_left, p_right, p_joint = left_n / total, right_n / total, joint / total
+            denominator = math.sqrt(p_left * p_right * (1 - p_left) * (1 - p_right))
+            phi = (p_joint - p_left * p_right) / denominator if denominator else 0.0
+            results.append(
+                Cooccurrence(
+                    left,
+                    right,
+                    joint,
+                    round(p_joint, 6),
+                    round(joint / union, 6),
+                    round(p_joint / (p_left * p_right), 6),
+                    round(phi, 6),
+                )
+            )
+    return sorted(
+        results, key=lambda row: (-row.support, -row.jaccard, row.skill_a, row.skill_b)
+    )
+
+
+def clustering_distance_inputs(
+    pairs: list[Cooccurrence], skills: list[str]
+) -> list[list[float]]:
+    similarities = {
+        tuple(sorted((pair.skill_a, pair.skill_b))): pair.jaccard for pair in pairs
+    }
+    return [
+        [
+            0.0
+            if left == right
+            else round(1 - similarities.get(tuple(sorted((left, right))), 0.0), 6)
+            for right in skills
+        ]
+        for left in skills
     ]
