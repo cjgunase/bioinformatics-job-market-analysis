@@ -4,6 +4,12 @@ Each numbered milestone is one day's maximum scope. A milestone may take more
 than one day if blocked or failing tests, but two milestones must never be
 combined to catch up.
 
+Owner-authorized exception: on 2026-08-14, Chathura authorized one sequential,
+one-shot completion run through every dependency-ready milestone. This changes
+only the daily pacing limit. Dependency order and all privacy, copyright,
+source-access, provenance, quality, reproducibility, and human-only gates remain
+mandatory. Decision D009 and `PROJECT_STATE.json` record the override.
+
 - [x] M01 — Import, checksum, and document specification 1.1.1.
 - [x] M02 — Scaffold the Python package, pinned tooling, and baseline CI.
 - [x] M03 — Define study configuration, controlled values, and run metadata.

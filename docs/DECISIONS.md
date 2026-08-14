@@ -71,3 +71,15 @@ non-null taxonomy identifiers. The implementation baseline remains pending
 initial human review and does not authorize canonical market findings; future
 taxonomy changes follow the append-only semantic-versioning, review, migration,
 and backcast rules in `taxonomy/CHANGELOG.md`.
+
+## D009 — 2026-08-14 — One-shot completion pacing override
+
+Chathura explicitly authorized a same-day, sequential completion run through
+all dependency-ready remaining milestones. For this run only, the
+one-milestone-per-day rule and `daily_milestone_limit` are superseded. No other
+rule changes: dependency order, scope and taxonomy governance, access controls,
+privacy, copyright, provenance, mandatory quality thresholds, reproducibility,
+and human-only decisions remain binding. The agent must complete only verified
+automatable work, must not invent live evidence, and must stop with an accurate
+`awaiting_human_review` status at the mandatory sign-off gate. The override is
+closed at the end of this one-shot run and does not create or re-enable a cron.

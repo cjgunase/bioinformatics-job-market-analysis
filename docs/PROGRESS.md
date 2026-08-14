@@ -94,3 +94,14 @@ Blockers: none. No collection was performed; candidate, included, reserve,
 evidence-validated, and human-reviewed counts remain zero.
 
 Next: M06 — add the versioned discovery-query catalogue.
+
+## 2026-08-14 — Authorized completion run started
+
+- Confirmed M05 was already merged in GitHub PR #5 with passing CI; it will not
+  be duplicated.
+- Started a one-shot, owner-authorized sequential run from M06. Decision D009
+  records that only the daily pacing rule is overridden.
+- Wrote the run plan before implementation or collection. No collection or
+  publication approval is claimed by this checkpoint.
+
+Next: M06 — add the versioned discovery-query catalogue.

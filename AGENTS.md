@@ -5,6 +5,10 @@
 2. Complete at most one pending milestone per calendar day in
    `America/New_York`. Setup and repair work must not silently advance another
    milestone.
+   The repository owner may authorize a dated, one-shot pacing override in
+   `PROJECT_STATE.json`; such an override changes only this pacing limit, must
+   preserve dependency order and every evidence/quality/human gate, and must be
+   closed when the authorized run ends.
 3. Work only on the first milestone whose dependencies are complete.
 4. Run milestone-appropriate tests before marking it complete.
 5. Update state, progress, and the append-only decision log in the same commit.
