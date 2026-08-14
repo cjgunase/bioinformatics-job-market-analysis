@@ -18,6 +18,10 @@ class Discovery:
     run_at_utc: str
     returned_url: str
     canonical_candidate_url: str
+    employer_id: str | None = None
+    company_name_normalized: str | None = None
+    title_raw: str | None = None
+    source_response_sha256: str | None = None
 
 
 def _digest(record: dict[str, Any]) -> str:
