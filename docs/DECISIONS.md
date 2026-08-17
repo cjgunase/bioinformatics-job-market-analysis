@@ -114,3 +114,13 @@ near-duplicate pairs, three deterministic mid-level records, and exactly 170
 records after the company cap. This closes the numerical insufficiency only.
 Human adjudication, template caps, diversity checks, and manifest approval still
 gate M38; no sample is frozen and no canonical estimate is authorized.
+
+## D012 — 2026-08-16 — Separate private job-search layer
+
+The repository may reuse already collected public posting data as a private
+candidate decision aid, but personal ranking remains outside the approved market
+study. Candidate profiles and generated shortlists are gitignored applicant data.
+Personal location, compensation, sponsorship, and academic-role preferences do
+not alter study eligibility, sampling, taxonomy, evidence, human review, or
+publication artifacts. Rankings are leads, not verified fit or application
+decisions, and every posting must be rechecked before use.

@@ -161,3 +161,20 @@ within the seven-day window. M38 is not dependency-ready until a compliant
 
 Next: human review and M37 manifest controls. M38 remains dependency-blocked
 until an approved 150-record sample and 20-record reserve are frozen.
+
+## 2026-08-16 — Private job-search utility
+
+- Added a personal shortlist command without changing or advancing the monthly
+  study milestone.
+- Kept the real candidate profile and generated ranking in gitignored private
+  storage; committed only a non-personal example profile.
+- Applied the owner's stated constraints: U.S.-remote or Houston, $100,000
+  minimum when salary is stated, unknown salary retained with a warning, no
+  sponsorship requirement, academic staff allowed, and no industry exclusion.
+- Ranked only deterministic study inclusions from already collected public ATS
+  responses. The output remains a private, unreviewed decision aid and does not
+  satisfy or replace any study human-review gate.
+
+Next: manually verify the highest-ranked live openings before preparing targeted
+application materials; independently complete the study's M37 human review when
+ready.

@@ -19,6 +19,7 @@ dependencies = [
 
 [project.scripts]
 market-analysis = "market_analysis.pipeline:main"
+job-shortlist = "market_analysis.job_search:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/market_analysis"]
