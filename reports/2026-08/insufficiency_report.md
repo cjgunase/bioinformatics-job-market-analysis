@@ -68,3 +68,24 @@ outside the canonical time series.
 
 No access control was bypassed, no live evidence was invented, and no recurring
 schedule is requested by this report.
+
+## 2026-08-17 compliant continuation
+
+The smallest retained expansion adds 38 publicly observed employer boards using
+only the already approved Greenhouse, Lever, and Ashby read-only contracts. All
+38 returned HTTP 200 and parsed under adapter contract version 1.0.0. No
+authentication, application endpoint, administrative endpoint, identifier
+guessing, or access-control bypass was used.
+
+The refreshed run screened 2,336 postings and retained 208 deterministic
+inclusions before exact deduplication. One exact duplicate was excluded, leaving
+207 unique pre-review eligible records. Applying the unchanged five-record
+company cap across 68 contributing companies leaves exactly 170 cap-usable
+records: 150 for the requested sample and 20 reserves. Three records are
+deterministically classified as mid-level.
+
+This resolves only the numerical insufficiency. Nine near-duplicate pairs,
+human eligibility/evidence review, template-cap enforcement, diversity checks,
+and final manifest approval remain mandatory. The manifest is not frozen and no
+canonical estimate or publication is authorized. Machine-readable validation is
+in `reports/2026-08/collection_expansion_validation.json`.

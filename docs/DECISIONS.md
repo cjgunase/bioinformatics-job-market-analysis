@@ -97,3 +97,30 @@ remain unchanged. Safe continuation requires additional publicly observed
 employers and a new one-shot collection, or explicit human approval for the
 specification's noncanonical reduced-sample special edition. D009 is now closed
 and the normal daily limit is restored.
+
+## D011 — 2026-08-16 — Minimum retained registry expansion
+
+The M37 insufficiency continuation retains 38 additional publicly observed
+employer boards: the smallest validated set, ordered by observed capped yield,
+that raises the refreshed cap-usable pool to 170. Collection reused only the
+approved Greenhouse, Lever, and Ashby public read contracts. Every retained
+board returned HTTP 200 and parsed under adapter contract 1.0.0; no identifier
+was guessed and no authentication, application, administrative, or bypass path
+was used. Eligibility, U.S. geography, the five-record company cap, evidence
+retention, diversity controls, and human-review requirements are unchanged.
+
+The expanded run has 207 unique deterministic pre-review records, nine
+near-duplicate pairs, three deterministic mid-level records, and exactly 170
+records after the company cap. This closes the numerical insufficiency only.
+Human adjudication, template caps, diversity checks, and manifest approval still
+gate M38; no sample is frozen and no canonical estimate is authorized.
+
+## D012 — 2026-08-16 — Separate private job-search layer
+
+The repository may reuse already collected public posting data as a private
+candidate decision aid, but personal ranking remains outside the approved market
+study. Candidate profiles and generated shortlists are gitignored applicant data.
+Personal location, compensation, sponsorship, and academic-role preferences do
+not alter study eligibility, sampling, taxonomy, evidence, human review, or
+publication artifacts. Rankings are leads, not verified fit or application
+decisions, and every posting must be rechecked before use.

@@ -87,6 +87,29 @@ and `data/interim/` paths when lawful retention is permitted. Public artifacts
 must contain only permitted excerpts, provenance metadata, derived values, and
 aggregates.
 
+## Personal job shortlist
+
+The market study and personal job search are separate. The study preserves its
+approved sampling and human-review rules; `job-shortlist` ranks already collected
+public openings against a private candidate profile and does not alter study
+eligibility, selection, or publication artifacts. Keep the real profile and
+generated shortlist under gitignored `data/private/`.
+
+Start from `config/job_search_profile.example.yaml`, then run:
+
+```bash
+job-shortlist \
+  --profile data/private/job_search_profile.yaml \
+  --registry config/employers.csv \
+  --responses ../probe-responses \
+  --eligible-jobs data/validated/2026-08/screened_jobs.jsonl \
+  --output-json data/private/shortlist.json \
+  --output-markdown data/private/shortlist.md
+```
+
+Salary is never imputed. Roles with unstated compensation remain clearly marked,
+and every opening must be rechecked before applying.
+
 ## License
 
 Code is released under the MIT License. Job-posting evidence remains subject to

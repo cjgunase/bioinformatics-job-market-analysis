@@ -1,0 +1,26 @@
+profile_version: 1.0.0
+candidate_id: example
+search:
+  remote_us: true
+  local_locations: ["Houston, TX"]
+  minimum_salary_usd: 100000
+  include_when_salary_unstated: true
+  academic_staff_allowed: true
+  sponsorship_required: false
+target_lanes:
+  bioinformatics:
+    weight: 5
+    terms: [bioinformatics, computational genomics, genomic analysis]
+  workflow_engineering:
+    weight: 4
+    terms: [nextflow, pipeline, workflow, docker, singularity, slurm, hpc]
+  sequencing:
+    weight: 4
+    terms: [sequencing, ngs, whole-genome, wgs, variant calling, methylation]
+  statistical_genomics:
+    weight: 3
+    terms: [human genetics, gwas, gnomad, regression, machine learning]
+  engineering:
+    weight: 3
+    terms: [python, r, sql, bash, git, continuous integration]
+exclude_terms: []

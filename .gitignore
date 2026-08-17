@@ -13,7 +13,9 @@ build/
 !.env.example
 data/raw/**
 data/interim/**
+data/private/**
 !data/raw/.gitkeep
 !data/interim/.gitkeep
+!data/private/.gitkeep
 *.sqlite3
 *.log

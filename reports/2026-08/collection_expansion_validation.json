@@ -1,0 +1,64 @@
+{
+  "run_id": "2026-08_bioinfo_jobs_us_v01",
+  "checked_at": "2026-08-17T00:20:43Z",
+  "basis": "M37 insufficiency continuation within the original seven-day collection window",
+  "registry_before": {
+    "rows": 38,
+    "active_rows": 36,
+    "cap_usable_records": 80
+  },
+  "registry_expansion": {
+    "added_rows": 38,
+    "active_rows_added": 38,
+    "ats_system_counts": {
+      "ashby": 17,
+      "greenhouse": 19,
+      "lever": 2
+    },
+    "minimality": "The retained boards are the smallest validated prefix by descending observed capped yield that reaches the 170-record target. Removing any retained one-record board reduces the cap-usable pool below 170.",
+    "identifiers_observed_in_public_first_party_ats_links": 38,
+    "identifiers_guessed": 0
+  },
+  "source_contract_validation": {
+    "read_only_public_gets": 38,
+    "http_200": 38,
+    "parser_contract_passes": 38,
+    "parser_contract_failures": 0,
+    "authentication_used": false,
+    "application_or_admin_endpoints_called": false,
+    "access_controls_bypassed": false,
+    "collection_rate": "one request per observed board with at least two seconds between same-script requests",
+    "adapter_versions": {
+      "ashby": "1.0.0",
+      "greenhouse": "1.0.0",
+      "lever": "1.0.0"
+    },
+    "raw_response_committed": false,
+    "retention_mode": "metadata_hash_and_minimum_audit_excerpt_only"
+  },
+  "result": {
+    "active_registry_rows": 74,
+    "screened_postings": 2336,
+    "deterministic_includes_before_exact_dedup": 208,
+    "exact_duplicate_exclusions": 1,
+    "eligible_unique_before_human_review": 207,
+    "near_duplicate_pairs_awaiting_human_review": 9,
+    "companies_with_eligible_records": 68,
+    "company_cap": 5,
+    "cap_usable_records": 170,
+    "target_sample": 150,
+    "reserve_records": 20,
+    "mid_level_records_before_human_review": 3,
+    "human_review_complete": false,
+    "sample_manifest_frozen": false
+  },
+  "governance": {
+    "eligibility_rules_changed": false,
+    "geography_rules_changed": false,
+    "company_cap_changed": false,
+    "diversity_thresholds_changed": false,
+    "evidence_rules_changed": false,
+    "human_review_bypassed": false,
+    "canonical_estimate_authorized": false
+  }
+}

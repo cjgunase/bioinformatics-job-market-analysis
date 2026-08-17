@@ -7,9 +7,9 @@
   "current_milestone": "M38",
   "last_completed_milestone": "M37",
   "last_completed_milestone_date": "2026-08-14",
-  "last_run_date": "2026-08-14",
-  "last_run_outcome": "blocked_insufficient_eligible_pool",
-  "status": "blocked",
+  "last_run_date": "2026-08-16",
+  "last_run_outcome": "cap_pool_ready_human_review_pending",
+  "status": "awaiting_human_review",
   "human_gate_required": true,
   "canonical_publication_approved": false,
   "pacing_override": {
@@ -27,6 +27,6 @@
     "closed_at": "2026-08-14T05:30:00Z",
     "closure_reason": "M37 documented an 80-posting maximum after the company cap, below the required 150 plus reserve; M38 is not dependency-ready."
   },
-  "blocking_evidence": "reports/2026-08/insufficiency_report.md",
-  "smallest_safe_continuation": "Expand the publicly observed registry and run another one-shot collection within the seven-day window without changing scope or thresholds."
+  "blocking_evidence": "reports/2026-08/collection_expansion_validation.json",
+  "smallest_safe_continuation": "Human-review the 207 unique deterministic inclusions, adjudicate nine near-duplicate pairs, enforce template and diversity controls, and freeze a manifest only if 150 records plus 20 reserves remain."
 }

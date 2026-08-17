@@ -1,8 +1,9 @@
 {"disposition": "duplicate_candidate", "left_job_id": "job_705dc216fd78cf0a9dc4", "right_job_id": "job_585e4bc528274e55e710", "similarity": 1.0}
 {"disposition": "duplicate_candidate", "left_job_id": "job_9ec82aadfb3e6c832017", "right_job_id": "job_97cfb83ef54f094777f3", "similarity": 0.917614}
-{"disposition": "pending_human", "left_job_id": "job_f9802c34dbdb2dbd6bef", "right_job_id": "job_d9d4305ebd37a76470c6", "similarity": 0.894353}
-{"disposition": "pending_human", "left_job_id": "job_e95131b85c70b031dadc", "right_job_id": "job_bf65dc9d69ddf4e50d53", "similarity": 0.877432}
+{"disposition": "pending_human", "left_job_id": "job_d9d4305ebd37a76470c6", "right_job_id": "job_f9802c34dbdb2dbd6bef", "similarity": 0.894353}
+{"disposition": "pending_human", "left_job_id": "job_bf65dc9d69ddf4e50d53", "right_job_id": "job_e95131b85c70b031dadc", "similarity": 0.877432}
 {"disposition": "duplicate_candidate", "left_job_id": "job_764df51fe47ba5342fc3", "right_job_id": "job_bde96b396cd163117b26", "similarity": 0.929801}
 {"disposition": "pending_human", "left_job_id": "job_03c606b8b391982ceaec", "right_job_id": "job_e7e3556ba6103db754ec", "similarity": 0.896067}
 {"disposition": "pending_human", "left_job_id": "job_03c606b8b391982ceaec", "right_job_id": "job_bd1c6adaf0de1747c53b", "similarity": 0.896067}
 {"disposition": "pending_human", "left_job_id": "job_cdb6fe3d17f30aec1df0", "right_job_id": "job_ab5965faec7394ab578a", "similarity": 0.891798}
+{"disposition": "pending_human", "left_job_id": "job_470712fbf8bcdfc5d272", "right_job_id": "job_6dd02be73df86faf5f92", "similarity": 0.874372}

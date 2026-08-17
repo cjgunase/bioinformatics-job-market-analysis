@@ -139,3 +139,42 @@ Blocking evidence: `reports/2026-08/insufficiency_report.md`.
 Next: expand the publicly observed registry and run another one-shot collection
 within the seven-day window. M38 is not dependency-ready until a compliant
 150-record sample and 20-record reserve can be frozen.
+
+## 2026-08-16 — M37 insufficiency continuation
+
+- Added the minimum retained set of 38 publicly observed employer ATS boards:
+  19 Greenhouse, 17 Ashby, and two Lever boards.
+- Validated all 38 boards with one low-rate public read each. Every response was
+  HTTP 200 and parsed under the existing 1.0.0 contracts; no new source type,
+  authentication, application endpoint, administrative endpoint, guessed
+  identifier, or access-control bypass was introduced.
+- Rebuilt the current metadata-only collection and deterministic screening
+  artifacts: 2,336 screened, 208 included before exact deduplication, one exact
+  duplicate excluded, 207 unique pre-review records, and nine near-duplicate
+  pairs queued for human adjudication.
+- The unchanged company cap leaves exactly 170 usable records across 68
+  contributing companies: 150 target records plus 20 reserves. Three records
+  are deterministically classified as mid-level.
+- Preserved the human gate. Template caps, diversity checks, evidence review,
+  near-duplicate adjudication, and manifest approval remain incomplete; no
+  manifest or canonical estimate was produced.
+
+Next: human review and M37 manifest controls. M38 remains dependency-blocked
+until an approved 150-record sample and 20-record reserve are frozen.
+
+## 2026-08-16 — Private job-search utility
+
+- Added a personal shortlist command without changing or advancing the monthly
+  study milestone.
+- Kept the real candidate profile and generated ranking in gitignored private
+  storage; committed only a non-personal example profile.
+- Applied the owner's stated constraints: U.S.-remote or Houston, $100,000
+  minimum when salary is stated, unknown salary retained with a warning, no
+  sponsorship requirement, academic staff allowed, and no industry exclusion.
+- Ranked only deterministic study inclusions from already collected public ATS
+  responses. The output remains a private, unreviewed decision aid and does not
+  satisfy or replace any study human-review gate.
+
+Next: manually verify the highest-ranked live openings before preparing targeted
+application materials; independently complete the study's M37 human review when
+ready.
